@@ -27,8 +27,9 @@ public class Enemy : IntEventInvoker
         rb = GetComponent<Rigidbody2D>();
 
         changedDirectionTimes = 0;
-        unityEvents.Add(EventName.AddScoreEvent, new AddScoreEvent());
-        EventManager.AddInvoker(EventName.AddScoreEvent, this);
+
+        unityEvents.Add(EventName.ScoreAddedEvent, new ScoreAddedEvent());
+        EventManager.AddInvoker(EventName.ScoreAddedEvent, this);
 
         EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
     }
@@ -72,7 +73,9 @@ public class Enemy : IntEventInvoker
     }
 
     public void Death(){
+        //Instantiate death prefab and play sound
+
         //Invoke event when enemy death
-        unityEvents[EventName.AddScoreEvent].Invoke(score);
+        unityEvents[EventName.ScoreAddedEvent].Invoke(this.score);
     }
 }

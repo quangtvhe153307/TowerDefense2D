@@ -7,26 +7,6 @@ using UnityEngine.Events;
 
 public static class EventManager
 {
-    //static List<Bullet> invokers = new List<Bullet>();
-    //static List<UnityAction<int>> listeners = new List<UnityAction<int>>();
-
-    //public static void AddInvokers(Bullet bullet)
-    //{
-    //    invokers.Add(bullet);
-    //    foreach (var item in listeners)
-    //    {
-    //        bullet.AddListener(item);
-    //    }
-    //}
-    //public static void AddListeners(UnityAction<int> handler)
-    //{
-    //    listeners.Add(handler);
-    //    foreach (var item in invokers)
-    //    {
-    //        item.AddListener(handler);
-    //    }
-    //}
-
     #region Fields
     static Dictionary<EventName, List<IntEventInvoker>> invokers = new();
     static Dictionary<EventName, List<UnityAction<int>>> listeners = new();

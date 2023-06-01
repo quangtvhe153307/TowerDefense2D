@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine.Events;
 
-public enum EventName
+public class ScoreAddedEvent : UnityEvent<int>
 {
-    EnemyAttackedEvent,
-    ScoreAddedEvent
+
 }
+
