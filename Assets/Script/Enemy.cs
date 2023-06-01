@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : IntEventInvoker
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private int health;
-
+    [SerializeField] private int score;
 
     private Transform target;
     private int pathIndex;
@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         changedDirectionTimes = 0;
+        unityEvents.Add(EventName.AddScoreEvent, new AddScoreEvent());
+        EventManager.AddInvoker(EventName.AddScoreEvent, this);
 
         EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
     }
@@ -64,14 +66,13 @@ public class Enemy : MonoBehaviour
     {
         health -= points;
         Debug.Log("Subtract 10 points");
-        if(this.health <= 0)
-        {
+        if(health <= 0){
             Death();
         }
     }
-    //Trigger Event Death
-    private void Death()
-    {
-        //Instantiate prefab death and play death sound
+
+    public void Death(){
+        //Invoke event when enemy death
+        unityEvents[EventName.AddScoreEvent].Invoke(score);
     }
 }
