@@ -5,13 +5,20 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Go_MiniGame : MonoBehaviour {
 	public Sprite StartClicked;
 	private Sprite auxClicked;
+    [SerializeField] private GameObject quit;
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        quit.SetActive(true);
+    }
+
+    // Use this for initialization
+    void Start () {
 		auxClicked = GetComponent<SpriteRenderer>().sprite;
 	}
 
@@ -19,7 +26,8 @@ public class Go_MiniGame : MonoBehaviour {
 	void OnMouseUp(){
 		GetComponent<SpriteRenderer>().sprite = auxClicked;
 		Exit();
-	}
+        quit.SetActive(false);
+    }
 
 	public void Exit(){Invoke("CrossfadeDelayed",0.5f);}
 
@@ -29,10 +37,9 @@ public class Go_MiniGame : MonoBehaviour {
 	}
 
 	private void ExitDelayed(){
-		if(this.gameObject.name=="Start"){
-			Application.LoadLevel("Example_Scene");
-		}if(this.gameObject.name=="StartPhone"){
-			Application.LoadLevel("Phone_Example_Scene");
-		}
-	}
+		if(this.gameObject.name=="Start"){            
+            SceneManager.LoadScene("Scene1");
+
+        }
+    }
 }
