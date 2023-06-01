@@ -31,7 +31,7 @@ public class Enemy : IntEventInvoker
         unityEvents.Add(EventName.ScoreAddedEvent, new ScoreAddedEvent());
         EventManager.AddInvoker(EventName.ScoreAddedEvent, this);
 
-        EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
+        //EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
     }
 
     private void Update()
@@ -58,7 +58,6 @@ public class Enemy : IntEventInvoker
         Vector2 direction = (target.position - transform.position).normalized;
         rb.velocity = direction * moveSpeed;
     }
-
     /// <summary>
     /// Subtract enemy's healthy when bullet reached
     /// </summary>
@@ -68,12 +67,14 @@ public class Enemy : IntEventInvoker
         health -= points;
         Debug.Log("Subtract 10 points");
         if(health <= 0){
-            Death();
+            this.Death();
         }
     }
 
-    public void Death(){
+    private void Death(){
         //Instantiate death prefab and play sound
+        //this.gameObject.SetActive(false);
+        Destroy(gameObject);
 
         //Invoke event when enemy death
         unityEvents[EventName.ScoreAddedEvent].Invoke(this.score);

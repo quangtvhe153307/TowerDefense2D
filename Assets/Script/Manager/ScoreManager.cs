@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         EventManager.AddListener(EventName.AddScoreEvent, AddScoreKillEnemy);
+         EventManager.AddListener(EventName.ScoreAddedEvent, AddScoreKillEnemy);
     }
 
     public void AddScoreKillEnemy(int enemyPoint)
