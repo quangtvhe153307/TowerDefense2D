@@ -4,16 +4,47 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<Wave> waves;
+    public float timeBetweenWaves = 10f;
+    private Queue<Wave> waveQueue = new Queue<Wave>();
+    private Wave currentWave;
+    private float timeUntilNextWave;
+    private void Start()
     {
-        
+        foreach (Wave wave in waves)
+        {
+            waveQueue.Enqueue(wave);
+        }
+
+        timeUntilNextWave = timeBetweenWaves;
+        StartNextWave();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void StartNextWave()
     {
-        
+        if (waveQueue.Count > 0)
+        {
+            currentWave = waveQueue.Dequeue();
+            StartCoroutine(SpawnEnemies(currentWave));
+        }
+        else
+        {
+            Debug.Log("No more waves!");
+        }
+    }
+
+    private IEnumerator SpawnEnemies(Wave wave)
+    {
+        yield return new WaitForSeconds(5f);
+        for (int i = 0; i < wave.enemyCount; i++)
+        {
+            GameObject enemy = ObjectPool.SharedInstance.GetPooledObject("Enemy" + wave.enemyName);
+            enemy.SetActive(true);
+            enemy.transform.position = transform.position;
+            yield return new WaitForSeconds(wave.timeBetweenEnemies);
+        }
+
+        timeUntilNextWave = timeBetweenWaves;
     }
     /// <summary>
     /// Get target for a specific tower
@@ -23,7 +54,7 @@ public class WaveManager : MonoBehaviour
     public static GameObject GetTarget(Tower tower)
     {
         List<GameObject> targetsInRange = GetTargetsInRange(tower);
-        if(targetsInRange == null || targetsInRange.Count == 0)
+        if (targetsInRange == null || targetsInRange.Count == 0)
         {
             return null;
         }
@@ -63,18 +94,25 @@ public class WaveManager : MonoBehaviour
     /// <returns></returns>
     private static GameObject FindClosestTargetToTheEnd(List<GameObject> targets)
     {
-        if(targets is null || targets.Count == 0) { return null; }
+        if (targets is null || targets.Count == 0) { return null; }
         float shortestSqrDistance = float.MaxValue;
         GameObject closestTarget = null;
         foreach (var target in targets)
         {
             float sqrDistance = PathFinding.main.SqrDistanceToTheEnd(target);
-            if(sqrDistance < shortestSqrDistance)
+            if (sqrDistance < shortestSqrDistance)
             {
                 shortestSqrDistance = sqrDistance;
                 closestTarget = target;
             }
         }
         return closestTarget;
+    }
+    [System.Serializable]
+    public class Wave
+    {
+        public int enemyCount;
+        public float timeBetweenEnemies;
+        public string enemyName;
     }
 }

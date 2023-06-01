@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
-public class Enemy : MonoBehaviour
+public class Enemy : IntEventInvoker
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] private int health;
+    [SerializeField] public int health;
+    [SerializeField] public int score;
 
 
     private Transform target;
@@ -21,17 +23,20 @@ public class Enemy : MonoBehaviour
     {
         get { return changedDirectionTimes; }
     }
-    private void Start()
+    protected virtual void Start()
     {
         target = PathFinding.main.path[pathIndex];
         rb = GetComponent<Rigidbody2D>();
 
         changedDirectionTimes = 0;
 
+        /*unityEvents.Add(EventName.AddScoreEvent, new AddScoreEvent());
+        EventManager.AddInvoker(EventName.AddScoreEvent, this);*/
+
         EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (Vector2.Distance(target.position, transform.position) <= 0.1f)
         {
@@ -47,7 +52,6 @@ public class Enemy : MonoBehaviour
                 target = PathFinding.main.path[pathIndex];
             }
         }
-
     }
 
     private void FixedUpdate()
@@ -62,7 +66,17 @@ public class Enemy : MonoBehaviour
     /// <param name="points">points to add</param>
     public void SubtractHealth(int points)
     {
-        //health -= points;
-        Debug.Log("Subtract 10 points");
+        health -= points;
+       // Debug.Log("Health: " + health);
+        if (health <= 0)
+        {
+            Death();
+        }
+    }
+
+    public void Death()
+    {
+        /*//Invoke event when enemy death
+        unityEvents[EventName.AddScoreEvent].Invoke(score);*/
     }
 }
