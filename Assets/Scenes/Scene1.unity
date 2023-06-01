@@ -1249,11 +1249,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   greenBulletToPool: {fileID: 8100911029418557079, guid: fc1ea66f81aeb8b439e69640352088b3, type: 3}
-  amountGreenBulletToPool: 200
+  amountGreenBulletToPool: 100
   pinkBulletToPool: {fileID: 2136053955796651058, guid: 3d94237ffc301a54a98fea5e0d979cde, type: 3}
-  amountPinkBulletToPool: 200
+  amountPinkBulletToPool: 100
   arrowToPool: {fileID: 1724516947869722542, guid: fd52e0a51eedd89498c8822ab0ba7880, type: 3}
-  amountArrowToPool: 200
+  amountArrowToPool: 100
 --- !u!1 &534499510
 GameObject:
   m_ObjectHideFlags: 0
