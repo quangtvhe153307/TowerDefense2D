@@ -62,7 +62,16 @@ public class Enemy : MonoBehaviour
     /// <param name="points">points to add</param>
     public void SubtractHealth(int points)
     {
-        //health -= points;
+        health -= points;
         Debug.Log("Subtract 10 points");
+        if(this.health <= 0)
+        {
+            Death();
+        }
+    }
+    //Trigger Event Death
+    private void Death()
+    {
+        //Instantiate prefab death and play death sound
     }
 }
