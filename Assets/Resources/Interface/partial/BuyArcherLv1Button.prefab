@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e71ca1ea6f535438cfb5c13b5d0dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  archerLv1Prefab: {fileID: 8531351262850751408, guid: 2033ef890592ea340b838f5a67775c19, type: 3}
+  archerLv1Prefab: {fileID: 1284998016841231102, guid: 2033ef890592ea340b838f5a67775c19, type: 3}
   archerLv2Prefab: {fileID: 0}
   archerLv3Prefab: {fileID: 0}
 --- !u!1 &8670045675336209304

@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   archerLv1Prefab: {fileID: 0}
   archerLv2Prefab: {fileID: 0}
-  archerLv3Prefab: {fileID: 3396612585172064735, guid: 84d0f33fd8775404692d1fcd5c9e88aa, type: 3}
+  archerLv3Prefab: {fileID: -5036111162760756333, guid: 84d0f33fd8775404692d1fcd5c9e88aa, type: 3}
 --- !u!1 &5216389166580385476
 GameObject:
   m_ObjectHideFlags: 0

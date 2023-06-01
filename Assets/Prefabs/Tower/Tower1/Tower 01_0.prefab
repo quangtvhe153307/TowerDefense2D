@@ -99,6 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.1
   range: 7
-  towerName: 
+  towerName: ArcherLevel1
   price: 0
   towerLevel: 0
