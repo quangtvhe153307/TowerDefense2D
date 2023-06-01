@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Tower : MonoBehaviour
+public abstract class Tower : MonoBehaviour, ITower
 {
     [SerializeField]
     protected float cooldown;
@@ -16,7 +16,13 @@ public abstract class Tower : MonoBehaviour
     {
         get { return range; }
     }
+    public string TowerName { get; set; }
+    public int Price { get; set; }
+    public int TowerLevel { get; set; }
 
+    public void Initialize()
+    {
+    }
     // Start is called before the first frame update
     protected virtual void Start()
     {

@@ -4,9 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ArcherTower : Tower
 {
+    [SerializeField]
+    private string towerName;
+    [SerializeField]
+    private int price;
+    [SerializeField]
+    private int towerLevel;
+    public string TowerName { get => towerName; set => towerName = value; }
+    public int Price { get => price; set => price = value; }
+    public int TowerLevel { get => towerLevel; set=> towerLevel = value; }
+    SelectTowerEvent selectEvent = new SelectTowerEvent();
+    public void Initialize()
+    {
+        gameObject.name = towerName;
+        transform.Find("SelectCircle").gameObject.SetActive(false);
+    }
     protected override GameObject GetPooledBullet()
     {
         GameObject go = ObjectPool.SharedInstance.GetPooledObject("ArrowBullet");
@@ -15,11 +31,24 @@ public class ArcherTower : Tower
 
     protected override void Start()
     {
+        SelectEventManager.AddSelectArcherTowerEventInvoker(this);
         //cooldown = 0.1f;
         //range = 7;
         base.Start();
     }
-
+    public void AddSelectCPEventListener(UnityAction<GameObject, int> listener)
+    {
+        selectEvent.AddListener(listener);
+    }
+    void OnMouseDown()
+    {
+        if (GameObject.Find("SelectCircle"))
+        {
+            GameObject.Find("SelectCircle").gameObject.SetActive(false);
+        }
+        transform.Find("SelectCircle").gameObject.SetActive(true);
+        selectEvent.Invoke(this.gameObject, TowerLevel);
+    }
     protected override void Update()
     {
         base.Update();
