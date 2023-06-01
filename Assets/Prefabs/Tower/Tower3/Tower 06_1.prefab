@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5089253700868385238}
   - component: {fileID: 1385623925448782993}
   - component: {fileID: -6521547747857855074}
-  - component: {fileID: -6375816824529971216}
+  - component: {fileID: 3454862944420111092}
   m_Layer: 0
   m_Name: Tower 06_1
   m_TagString: Untagged
@@ -113,7 +113,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 1.13}
   m_EdgeRadius: 0
---- !u!114 &-6375816824529971216
+--- !u!114 &3454862944420111092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,14 +122,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2957698994345423370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ee46e346bf9f4f418d06769260a4b73, type: 3}
+  m_Script: {fileID: 11500000, guid: bbc4d3a4fcb5d5249ab1ecbd5433d7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.1
-  range: 8
-  towerName: ArcherLevel2
-  price: 60
-  towerLevel: 2
+  cooldown: 0.5
+  range: 10
 --- !u!1 &5418348279456495394
 GameObject:
   m_ObjectHideFlags: 0
