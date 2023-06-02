@@ -10,7 +10,6 @@ public class Enemy : IntEventInvoker
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private int health;
     [SerializeField] private int score;
-    [SerializeField] public int damage = 30;
 
     private Transform target;
     private int pathIndex;
@@ -90,7 +89,7 @@ public class Enemy : IntEventInvoker
             // house.TakeDamage(this.damage);
 
             //Invoke event when enemy attack house
-            unityEvents[EventName.HouseAttackedEvent].Invoke(this.damage);
+            unityEvents[EventName.HouseAttackedEvent].Invoke(1);
 
         }
     }

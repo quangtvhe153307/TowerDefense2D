@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class House : IntEventInvoker
 {
@@ -8,31 +9,22 @@ public class House : IntEventInvoker
     public int currentHealth;
     public HealthBar healthBar; 
     GameObject slider; 
-    // Start is called before the first frame update
-    
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         slider = GameObject.Find("HealthBar");
         DeactiveSliderHealthBar();
+        Debug.Log("Max health: " + maxHealth + "Current health: " + currentHealth);
+
         EventManager.AddListener(EventName.HouseAttackedEvent, TakeDamage);
-
+        
     }
-
-    // Update is called once per frame
-    // void Update()
-    // {
-    //    if(Input.GetKeyDown(KeyCode.Space)){
-    //         TakeDamage(10);
-    //         slider.SetActive(true);
-    //         Invoke("DeactiveSliderHealthBar", 2f);
-    //     }
-    // }
 
     public void TakeDamage(int damage){
         currentHealth -= damage;
-        Debug.Log("Current Health House: " + currentHealth);
+        Debug.Log("Max health: " + maxHealth + "Current health: " + currentHealth);
+
         healthBar.SetHealth(currentHealth);
         slider.SetActive(true);
         Invoke("DeactiveSliderHealthBar", 2f);
@@ -41,8 +33,15 @@ public class House : IntEventInvoker
             // Invoke event game over here!
             Time.timeScale = 0;
         }
+         // Update status health
+        StatusHealth statusHealth = GetComponent<StatusHealth>();
+        if (statusHealth != null)
+        {
+            statusHealth.SetStatusHealth(this);
+        }
     }
     public void DeactiveSliderHealthBar(){
         slider.SetActive(false);
     }
+    
 }
