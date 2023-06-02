@@ -1001,7 +1001,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.5805235
+  orthographic size: 10.231801
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11549,6 +11549,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3931669541058774090, guid: 9d244ed8c4e0265479e574fcb4a9064a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7869895412371539392, guid: 9d244ed8c4e0265479e574fcb4a9064a, type: 3}
       propertyPath: m_Name
       value: Tower 01_0
@@ -11619,6 +11623,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4522422545596164532, guid: 363d754ba77ed4444bbb2f16a9e00a86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8705747389442889065, guid: 363d754ba77ed4444bbb2f16a9e00a86, type: 3}
       propertyPath: m_Name
       value: Tower 03_0

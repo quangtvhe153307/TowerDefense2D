@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2705668272605063102}
   - component: {fileID: 2705668272605063101}
   - component: {fileID: 954361314185941052}
-  - component: {fileID: 2164943744603454544}
+  - component: {fileID: 2205553321300974377}
   m_Layer: 0
   m_Name: Bo
   m_TagString: Enemy
@@ -128,7 +128,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2164943744603454544
+--- !u!114 &2205553321300974377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,10 +137,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2705668272605063100}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f42f052de275fe4e860154c6a5dd0eb, type: 3}
+  m_Script: {fileID: 11500000, guid: eb4d847bc40cb0340b9ece066d24e961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 954361314185941052}
-  moveSpeed: 2
+  moveSpeed: 0
   health: 0
   score: 0

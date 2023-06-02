@@ -8,6 +8,10 @@ public class Bo : Enemy
     protected override void Start()
     {
         base.Start();
+        health = ConfigurationUtils.BoHealth;
+        moveSpeed = ConfigurationUtils.BoSpeed;
+        score = ConfigurationUtils.BoScore;
+        
     }
 
     // Update is called once per frame

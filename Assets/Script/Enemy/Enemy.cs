@@ -8,9 +8,9 @@ public class Enemy : IntEventInvoker
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [Header("Attributes")]
-    [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] public int health;
-    [SerializeField] public int score;
+     public float moveSpeed;
+     public int health;
+     public int score;
 
 
     private Transform target;
