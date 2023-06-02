@@ -10,6 +10,7 @@ public class Enemy : IntEventInvoker
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private int health;
     [SerializeField] private int score;
+    [SerializeField] public int damage = 30;
 
     private Transform target;
     private int pathIndex;
@@ -30,6 +31,9 @@ public class Enemy : IntEventInvoker
 
         unityEvents.Add(EventName.ScoreAddedEvent, new ScoreAddedEvent());
         EventManager.AddInvoker(EventName.ScoreAddedEvent, this);
+
+        unityEvents.Add(EventName.HouseAttackedEvent, new HouseAttackedEvent());
+        EventManager.AddInvoker(EventName.HouseAttackedEvent, this);
 
         //EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
     }
@@ -79,4 +83,16 @@ public class Enemy : IntEventInvoker
         //Invoke event when enemy death
         unityEvents[EventName.ScoreAddedEvent].Invoke(this.score);
     }
+
+    protected void OnTriggerEnter2D(Collider2D collision){
+        if (collision.CompareTag("House")){
+            // House house = collision.gameObject.GetComponent<House>();
+            // house.TakeDamage(this.damage);
+
+            //Invoke event when enemy attack house
+            unityEvents[EventName.HouseAttackedEvent].Invoke(this.damage);
+
+        }
+    }
+
 }

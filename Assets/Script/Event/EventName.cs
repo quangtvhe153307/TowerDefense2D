@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 public enum EventName
 {
     //EnemyAttackedEvent,
-    ScoreAddedEvent
+    ScoreAddedEvent,
+    HouseAttackedEvent
 }
