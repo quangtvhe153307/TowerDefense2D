@@ -4,7 +4,7 @@
 public enum AudioClipName
 {
     BurgerDamage,
-    BurgerDeath,
+    Death,
     BurgerShot,
     Explosion,
     MenuButtonClick,

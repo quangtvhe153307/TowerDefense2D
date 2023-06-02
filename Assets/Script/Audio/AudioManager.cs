@@ -30,8 +30,8 @@ public static class AudioManager
         audioSource = source;
         //audioClips.Add(AudioClipName.BurgerDamage, 
         //    Resources.Load<AudioClip>("BurgerDamage"));
-        //audioClips.Add(AudioClipName.BurgerDeath,
-        //    Resources.Load<AudioClip>("BurgerDeath"));
+        audioClips.Add(AudioClipName.Death,
+            Resources.Load<AudioClip>("Death"));
         //audioClips.Add(AudioClipName.BurgerShot,
         //    Resources.Load<AudioClip>("BurgerShot"));
         //audioClips.Add(AudioClipName.Explosion,
