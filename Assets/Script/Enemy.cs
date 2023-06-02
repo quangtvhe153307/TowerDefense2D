@@ -78,5 +78,6 @@ public class Enemy : IntEventInvoker
 
         //Invoke event when enemy death
         unityEvents[EventName.ScoreAddedEvent].Invoke(this.score);
+        AudioManager.Play(AudioClipName.MenuButtonClick);
     }
 }
