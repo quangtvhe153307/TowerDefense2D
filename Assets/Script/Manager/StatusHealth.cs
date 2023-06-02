@@ -5,10 +5,16 @@ using UnityEngine.UI;
 
 public class StatusHealth : MonoBehaviour
 {
-    public Text healthText;
+    [SerializeField]
+    private GameObject houseGameObject;
+    private Text healthText;
     void Start()
     {
         healthText = GetComponent<Text>();
+
+        //Get House Object
+        House house = houseGameObject.GetComponent<House>();
+        healthText.text = house.currentHealth.ToString() + "/" + house.maxHealth.ToString();
     }
 
     public void SetStatusHealth(House house)

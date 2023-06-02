@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class House : IntEventInvoker
 {
     [SerializeField] public int maxHealth;
+    [SerializeField] GameObject healthText;
     public int currentHealth;
     public HealthBar healthBar; 
     GameObject slider; 
@@ -34,7 +35,7 @@ public class House : IntEventInvoker
             Time.timeScale = 0;
         }
          // Update status health
-        StatusHealth statusHealth = GetComponent<StatusHealth>();
+        StatusHealth statusHealth = healthText.GetComponent<StatusHealth>();
         if (statusHealth != null)
         {
             statusHealth.SetStatusHealth(this);
