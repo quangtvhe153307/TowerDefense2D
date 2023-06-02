@@ -442,6 +442,10 @@ PrefabInstance:
       value: 3.221
       objectReference: {fileID: 0}
     - target: {fileID: 3363112764057909299, guid: 628173e88634ffe4dba0068a25430756, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3363112764057909299, guid: 628173e88634ffe4dba0068a25430756, type: 3}
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
@@ -670,6 +674,10 @@ PrefabInstance:
     - target: {fileID: -1750287959039363694, guid: 39bda501199fd1742878a8164edfff60, type: 3}
       propertyPath: m_BodyType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449115845838208781, guid: 39bda501199fd1742878a8164edfff60, type: 3}
+      propertyPath: health
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6213385148066220133, guid: 39bda501199fd1742878a8164edfff60, type: 3}
       propertyPath: m_Name
@@ -2451,6 +2459,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1588258673}
     m_Modifications:
+    - target: {fileID: -2767625648277522229, guid: 7dcacbadf339164409af0dda103c3ddd, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: -2767625648277522229, guid: 7dcacbadf339164409af0dda103c3ddd, type: 3}
       propertyPath: moveSpeed
       value: 5
