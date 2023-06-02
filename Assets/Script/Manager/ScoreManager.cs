@@ -14,7 +14,8 @@ public class ScoreManager : MonoBehaviour
     public void AddScoreKillEnemy(int enemyPoint)
     {
         currentScore += enemyPoint;
-        Debug.Log("Current Score: "+ currentScore );
+        StatusScore.currentScore = currentScore;
+      //  Debug.Log("Current Score: "+ currentScore );
     }
 
     public static void SubtractScoreUpgradeTower(int upgradeCost)
@@ -22,7 +23,8 @@ public class ScoreManager : MonoBehaviour
         if (currentScore >= upgradeCost)
         {
             currentScore -= upgradeCost;
-            Debug.Log("Current Score: "+ currentScore );
+            StatusScore.currentScore = currentScore;
+         //   Debug.Log("Current Score: "+ currentScore );
         }
         else
         {
@@ -33,6 +35,7 @@ public class ScoreManager : MonoBehaviour
     public static void AddScoreSellTower(int towerPrice)
     {
         currentScore += towerPrice;
-        Debug.Log("Current Score: "+ currentScore );
+        StatusScore.currentScore = currentScore;
+       // Debug.Log("Current Score: "+ currentScore );
     }
 }

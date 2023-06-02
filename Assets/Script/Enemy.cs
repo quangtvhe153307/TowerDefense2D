@@ -31,6 +31,9 @@ public class Enemy : IntEventInvoker
         unityEvents.Add(EventName.ScoreAddedEvent, new ScoreAddedEvent());
         EventManager.AddInvoker(EventName.ScoreAddedEvent, this);
 
+        unityEvents.Add(EventName.HouseAttackedEvent, new HouseAttackedEvent());
+        EventManager.AddInvoker(EventName.HouseAttackedEvent, this);
+
         //EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
     }
 
@@ -80,4 +83,16 @@ public class Enemy : IntEventInvoker
         unityEvents[EventName.ScoreAddedEvent].Invoke(this.score);
         AudioManager.Play(AudioClipName.Death);
     }
+
+    protected void OnTriggerEnter2D(Collider2D collision){
+        if (collision.CompareTag("House")){
+            // House house = collision.gameObject.GetComponent<House>();
+            // house.TakeDamage(this.damage);
+
+            //Invoke event when enemy attack house
+            unityEvents[EventName.HouseAttackedEvent].Invoke(1);
+
+        }
+    }
+
 }
