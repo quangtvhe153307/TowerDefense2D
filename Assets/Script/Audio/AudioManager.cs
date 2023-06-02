@@ -28,20 +28,26 @@ public static class AudioManager
     {
         initialized = true;
         audioSource = source;
-        //audioClips.Add(AudioClipName.BurgerDamage, 
-        //    Resources.Load<AudioClip>("BurgerDamage"));
+        audioClips.Add(AudioClipName.ArrowTowerShoot,
+            Resources.Load<AudioClip>("ArrowTowerShoot"));
+        audioClips.Add(AudioClipName.BackGround,
+            Resources.Load<AudioClip>("BackGround"));
+        audioClips.Add(AudioClipName.ButtonClick,
+            Resources.Load<AudioClip>("ButtonClick"));
         audioClips.Add(AudioClipName.Death,
-            Resources.Load<AudioClip>("Death"));
-        //audioClips.Add(AudioClipName.BurgerShot,
-        //    Resources.Load<AudioClip>("BurgerShot"));
-        //audioClips.Add(AudioClipName.Explosion,
-        //     Resources.Load<AudioClip>("Explosion"));
-        audioClips.Add(AudioClipName.MenuButtonClick,
-             Resources.Load<AudioClip>("ButtonClick"));
-        //audioClips.Add(AudioClipName.PauseGame,
-        //      Resources.Load<AudioClip>("ButtonClick"));
-        //audioClips.Add(AudioClipName.TeddyShot,
-        //    Resources.Load<AudioClip>("TeddyShot"));
+             Resources.Load<AudioClip>("Death"));
+        audioClips.Add(AudioClipName.GameOver,
+             Resources.Load<AudioClip>("GameOver"));
+        audioClips.Add(AudioClipName.HomeExplosion,
+              Resources.Load<AudioClip>("HomeExplosion"));
+        audioClips.Add(AudioClipName.KnightTowerShoot,
+            Resources.Load<AudioClip>("KnightTowerShoot"));
+        audioClips.Add(AudioClipName.MagicianTowerShootShoot,
+            Resources.Load<AudioClip>("MagicianTowerShootShoot"));
+        audioClips.Add(AudioClipName.StartWave,
+            Resources.Load<AudioClip>("StartWave"));
+        audioClips.Add(AudioClipName.SubtractCoin,
+            Resources.Load<AudioClip>("SubtractCoin"));
     }
 
     /// <summary>
