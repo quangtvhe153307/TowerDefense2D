@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AddScoreEvent : UnityEvent<int>
+public class ScoreAddedEvent : UnityEvent<int>
 {
    
 }
