@@ -19,7 +19,7 @@ public abstract class Tower : MonoBehaviour, ITower
     [SerializeField]
     protected int Price;
     [SerializeField]
-    protected int towerLevel;
+    public int towerLevel;
     protected SelectTowerEvent selectEvent = new SelectTowerEvent();
     protected virtual void Start()
     {

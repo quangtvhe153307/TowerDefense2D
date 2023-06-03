@@ -12,8 +12,11 @@ public class UpgradeToKnightTowerLv3ButtonController : ButtonInterface
     }
     void OnMouseDown()
     {
-        InstantiateTower();
-        Invoke("onDestroy", 0);
+         int  price = ConfigurationUtils.PriceKnightLv3;
+        if(ScoreManager.SubtractScoreUpgradeTower(price)){
+            InstantiateTower();
+            Invoke("onDestroy", 0);
+        }
     }
     private void InstantiateTower(){
         Vector3 cpos = SelectedTower.transform.position;

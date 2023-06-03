@@ -21,6 +21,7 @@ public class GameInitializer : MonoBehaviour
         PlayerPrefs.SetInt("Scene", 1);
         EventManager.Initialize();
         ConfigurationUtils.Initialize();
+        ScoreManager.Initialize();
     }
 
 }
