@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1753178340044820939}
   - component: {fileID: 1213494109463511237}
+  - component: {fileID: 7605793697461452080}
   m_Layer: 0
   m_Name: Tower 01_2
   m_TagString: Untagged
@@ -84,3 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7605793697461452080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011210157146265287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee46e346bf9f4f418d06769260a4b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.1
+  range: 7
+  towerName: 
+  price: 0
+  towerLevel: 0

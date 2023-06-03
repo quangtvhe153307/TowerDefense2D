@@ -4,19 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MagicianTower : Tower
 {
     protected override void Start()
     {
+        gameObject.name = $"MagicianLevel{towerLevel}";
+        SelectEventManager.AddSelectMagicianTowerEventInvoker(this);
         //cooldown = 0.4f;
         //range = 5;
         base.Start();
-    }
-
-    protected override void Update()
-    {
-        base.Update();
     }
     protected override GameObject GetPooledBullet()
     {
