@@ -28,7 +28,31 @@ public class ObjectPool : MonoBehaviour
     [SerializeField]
     public int amountArrowToPool;
 
-
+    //Enemy Bo
+    [SerializeField]
+    public GameObject enemyBo;
+    [SerializeField]
+    public int amountBoEnemy;
+    //Enemy Ga
+    [SerializeField]
+    public GameObject enemyGa;
+    [SerializeField]
+    public int amountGaEnemy;
+    //Enemy Tho
+    [SerializeField]
+    public GameObject enemyTho;
+    [SerializeField]
+    public int amountThoEnemy;
+    //Enemy Nam
+    [SerializeField]
+    public GameObject enemyNam;
+    [SerializeField]
+    public int amountNamEnemy;
+    //Enemy Slime
+    [SerializeField]
+    public GameObject enemySlime;
+    [SerializeField]
+    public int amountSlimeEnemy;
 
     private void Awake()
     {
@@ -37,6 +61,51 @@ public class ObjectPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        List<GameObject> pooledEnemy = new List<GameObject>();
+        GameObject tmp2;
+        for (int i = 0; i < amountBoEnemy; i++)
+        {
+            tmp2 = Instantiate(enemyBo);
+            tmp2.SetActive(false);
+            pooledEnemy.Add(tmp2);
+        }
+        pooledObjectDictionary.Add("EnemyBo", pooledEnemy);
+
+        pooledEnemy = new List<GameObject>();
+        for (int i = 0; i < amountThoEnemy; i++)
+        {
+            tmp2 = Instantiate(enemyTho);
+            tmp2.SetActive(false);
+            pooledEnemy.Add(tmp2);
+        }
+        pooledObjectDictionary.Add("EnemyTho", pooledEnemy);
+
+        pooledEnemy = new List<GameObject>();
+        for (int i = 0; i < amountGaEnemy; i++)
+        {
+            tmp2 = Instantiate(enemyGa);
+            tmp2.SetActive(false);
+            pooledEnemy.Add(tmp2);
+        }
+        pooledObjectDictionary.Add("EnemyGa", pooledEnemy);
+
+        pooledEnemy = new List<GameObject>();
+        for (int i = 0; i < amountNamEnemy; i++)
+        {
+            tmp2 = Instantiate(enemyNam);
+            tmp2.SetActive(false);
+            pooledEnemy.Add(tmp2);
+        }
+        pooledObjectDictionary.Add("EnemyNam", pooledEnemy);
+
+        pooledEnemy = new List<GameObject>();
+        for (int i = 0; i < amountSlimeEnemy; i++)
+        {
+            tmp2 = Instantiate(enemySlime);
+            tmp2.SetActive(false);
+            pooledEnemy.Add(tmp2);
+        }
+        pooledObjectDictionary.Add("EnemySlime", pooledEnemy);
         List<GameObject> pooledGreenBullets = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < amountGreenBulletToPool; i++)

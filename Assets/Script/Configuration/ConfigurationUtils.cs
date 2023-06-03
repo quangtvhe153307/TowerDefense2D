@@ -75,7 +75,42 @@ public static class ConfigurationUtils
     {
         get { return configurationData.TimeBetweenWaves; }
     }
-
+    public static float CooldownArcher
+    {
+        get { return configurationData.cooldownArcher; }
+    }
+    public static float RangeArcher
+    {
+        get { return configurationData.rangeArcher; }
+    }
+    public static int PriceArcher
+    {
+        get { return configurationData.priceArcher; }
+    }
+    public  static float CooldownKnight
+    {
+        get { return configurationData.cooldownKnight; }
+    }
+    public static float RangeKnight
+    {
+        get { return configurationData.rangeKnight; }
+    }
+    public static int PriceKnight
+    {
+        get { return configurationData.priceKnight; }
+    }
+    public static float CooldownMagician
+    {
+        get { return configurationData.cooldownMagician; }
+    }
+    public static float RangeMagician
+    {
+        get { return configurationData.rangeMagician; }
+    }
+    public static int PriceMagician
+    {
+        get { return configurationData.priceMagician; }
+    }
     /// <summary>
     /// Initializes the configuration utils
     /// </summary>

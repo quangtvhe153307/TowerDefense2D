@@ -14,6 +14,9 @@ public class ArcherTower : Tower
         SelectEventManager.AddSelectArcherTowerEventInvoker(this);
         //cooldown = 0.1f;
         //range = 7;
+        cooldown = ConfigurationUtils.CooldownArcher;
+        range = ConfigurationUtils.RangeArcher;
+        Price = ConfigurationUtils.PriceArcher;
         base.Start();
     }
     protected override GameObject GetPooledBullet()

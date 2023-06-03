@@ -1,19 +1,53 @@
+using Assets.Script.Manager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<Wave> waves;
+    public float timeBetweenWaves;
+    private Queue<Wave> waveQueue = new Queue<Wave>();
+    private Wave currentWave;
+    private float timeUntilNextWave;
+    private void Start()
     {
-        
+        /*        waves = ConfigurationUtils.Waves;*/
+        timeBetweenWaves = ConfigurationUtils.TimeBetweenWaves;
+        foreach (Wave wave in waves)
+        {
+            waveQueue.Enqueue(wave);
+        }
+
+        timeUntilNextWave = timeBetweenWaves;
+        StartNextWave();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void StartNextWave()
     {
-        
+        if (waveQueue.Count > 0)
+        {
+            currentWave = waveQueue.Dequeue();
+            StartCoroutine(SpawnEnemies(currentWave));
+        }
+        else
+        {
+            Debug.Log("No more waves!");
+        }
+    }
+
+    private IEnumerator SpawnEnemies(Wave wave)
+    {
+        yield return new WaitForSeconds(5f);
+        for (int i = 0; i < wave.enemyCount; i++)
+        {
+            GameObject enemy = ObjectPool.SharedInstance.GetPooledObject("Enemy" + wave.enemyName);
+            enemy.SetActive(true);
+            enemy.transform.position = transform.position;
+            yield return new WaitForSeconds(wave.timeBetweenEnemies);
+        }
+
+        timeUntilNextWave = timeBetweenWaves;
     }
     /// <summary>
     /// Get target for a specific tower

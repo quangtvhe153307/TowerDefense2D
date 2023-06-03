@@ -15,6 +15,9 @@ public class MagicianTower : Tower
         //cooldown = 0.4f;
         //range = 5;
         base.Start();
+        cooldown = ConfigurationUtils.CooldownMagician;
+        range = ConfigurationUtils.RangeMagician;
+        Price = ConfigurationUtils.PriceMagician;
     }
     protected override GameObject GetPooledBullet()
     {

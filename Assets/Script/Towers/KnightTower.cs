@@ -15,6 +15,9 @@ public class KnightTower : Tower
         //cooldown = 0.4f;
         //range = 3;
         base.Start();
+        cooldown = ConfigurationUtils.CooldownKnight;
+        range = ConfigurationUtils.RangeKnight;
+        Price = ConfigurationUtils.PriceKnight;
     }
     protected override GameObject GetPooledBullet()
     {
