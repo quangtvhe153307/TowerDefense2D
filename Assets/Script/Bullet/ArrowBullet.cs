@@ -7,12 +7,12 @@ public class ArrowBullet : Bullet
     public float ArrowDirection { get; set; } = 180;
     protected override void Start()
     {
+        speed = ConfigurationUtils.ArrowBulletSpeed;
         base.Start();
     }
 
     protected override void Update()
     {
-        //speed = 20;
         base.Update();
     }
 }

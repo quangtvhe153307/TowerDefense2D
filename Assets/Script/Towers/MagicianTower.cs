@@ -43,5 +43,9 @@ public class MagicianTower : Tower
         GameObject go = ObjectPool.SharedInstance.GetPooledObject("GreenBullet");
         return go;
     }
+    protected override void PlaySound()
+    {
+        AudioManager.Play(AudioClipName.MagicianTowerShootShoot);
+    }
 }
 

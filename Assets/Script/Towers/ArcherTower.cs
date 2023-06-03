@@ -70,4 +70,9 @@ public class ArcherTower : Tower
         }
         return degree;
     }
+
+    protected override void PlaySound()
+    {
+        AudioManager.Play(AudioClipName.ArrowTowerShoot);
+    }
 }

@@ -6,6 +6,7 @@ public class PinkBullet : Bullet
 {
     protected override void Start()
     {
+        speed = ConfigurationUtils.KnightBulletSpeed;
         base.Start();
     }
 

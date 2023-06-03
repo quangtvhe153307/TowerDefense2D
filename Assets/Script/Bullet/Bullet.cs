@@ -5,9 +5,7 @@ using UnityEngine;
 public class Bullet : IntEventInvoker
 {
     #region Fields
-    [SerializeField]
     protected int damage = 1;
-    [SerializeField]
     protected float speed = 1;
 
     protected GameObject target;
@@ -19,8 +17,6 @@ public class Bullet : IntEventInvoker
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        //unityEvents.Add(EventName.EnemyAttackedEvent, new EnemyAttackedEvent());
-        //EventManager.AddInvoker(EventName.EnemyAttackedEvent, this);
     }
 
     // Update is called once per frame
@@ -50,8 +46,6 @@ public class Bullet : IntEventInvoker
     {
         if (collision.gameObject.Equals(target))
         {
-            //Invoke event when bullet hit target
-            //unityEvents[EventName.EnemyAttackedEvent].Invoke(this.damage);
 
             //Subtract enemy health
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
@@ -64,6 +58,10 @@ public class Bullet : IntEventInvoker
     public void SetTarget(GameObject target)
     {
         this.target = target;
+    }
+    public void SetDamage(int damage)
+    {
+        this.damage = damage;
     }
     #endregion
 }

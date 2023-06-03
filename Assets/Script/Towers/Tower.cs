@@ -6,9 +6,7 @@ using UnityEngine.Events;
 public abstract class Tower : MonoBehaviour, ITower
 {
     protected int damage;
-    [SerializeField]
     protected float cooldown;
-    [SerializeField]
     protected float range;
     protected Timer shootCoolDownTimer;
     protected GameObject _target;
@@ -47,9 +45,11 @@ public abstract class Tower : MonoBehaviour, ITower
             go.SetActive(true);
             Bullet bullet = go.GetComponent<Bullet>();
             bullet.SetTarget(_target);
+            bullet.SetDamage(this.damage);
             RotateBullet(go, this.gameObject.transform.position, _target.transform.position);
             go.transform.position = this.gameObject.transform.position;
             shootCoolDownTimer.Run();
+            PlaySound();
         }
     }
     public void AddSelectCPEventListener(UnityAction<GameObject, int> listener)
@@ -76,5 +76,9 @@ public abstract class Tower : MonoBehaviour, ITower
 
     protected virtual void RotateBullet(GameObject gameObject, Vector3 towerPosition ,Vector3 destination)
     {
+    }
+    protected virtual void PlaySound()
+    {
+
     }
 }

@@ -6,12 +6,12 @@ public class GreenBullet : Bullet
 {
     protected override void Start()
     {
+        speed = ConfigurationUtils.MagicianBulletSpeed;
         base.Start();
     }
 
     protected override void Update()
     {
-        //speed = 15;
         base.Update();
     }
 }

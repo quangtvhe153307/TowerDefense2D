@@ -30,12 +30,14 @@ public class ConfigurationData
     static int ThohealthEnemy = 100;
     static int ThoscoreEnemy = 100;
     //default value of tower
-
     //default wave enemy
 /*    static List<Wave> waves;*/
     static float timeBetweenWaves = 10f;
     //default object pooling count
 
+    private static float arrowBulletSpeed = 1f;
+    private static float knightBulletSpeed = 1f;
+    private static float magicianBulletSpeed = 1f;
     //Get data
 
     public float boSpeed
@@ -296,6 +298,18 @@ public class ConfigurationData
     {
         get { return DamageMagicianLv3; }
     }
+    public float ArrowBulletSpeed
+    {
+        get { return arrowBulletSpeed; }
+    }    
+    public float KnightBulletSpeed
+    {
+        get { return knightBulletSpeed; }
+    }    
+    public float MagicianBulletSpeed
+    {
+        get { return magicianBulletSpeed; }
+    }
     public ConfigurationData()
     {
         // read and save configuration data from file
@@ -310,8 +324,11 @@ public class ConfigurationData
             string names = input.ReadLine();
             string values = input.ReadLine();
             string listvalue = input.ReadLine();
+            string bulletName = input.ReadLine();
+            string bulletSpeedValue = input.ReadLine();
             // set configuration data fields
             SetConfigurationDataFields(values/*, listvalue*/);
+            SetBulletData(bulletSpeedValue);
         }
         catch (Exception e)
         {
@@ -409,4 +426,17 @@ public class ConfigurationData
         }
         return list;
     }*/
+    private static void SetBulletData(string value)
+    {
+        string[] strings = value.Split(",");
+        try
+        {
+            arrowBulletSpeed= float.Parse(strings[0]);
+            magicianBulletSpeed= float.Parse(strings[1]);
+            knightBulletSpeed= float.Parse(strings[2]);
+        } catch(Exception ex)
+        {
+
+        } 
+    }
 }

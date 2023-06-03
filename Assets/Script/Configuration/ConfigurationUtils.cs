@@ -224,6 +224,18 @@ public static class ConfigurationUtils
     {
         get { return configurationData.damageMagicianLv3; }
     }
+    public static float ArrowBulletSpeed
+    {
+        get { return configurationData.ArrowBulletSpeed; }
+    }    
+    public static float MagicianBulletSpeed
+    {
+        get { return configurationData.MagicianBulletSpeed; }
+    }    
+    public static float KnightBulletSpeed
+    {
+        get { return configurationData.KnightBulletSpeed; }
+    }
     /// <summary>
     /// Initializes the configuration utils
     /// </summary>

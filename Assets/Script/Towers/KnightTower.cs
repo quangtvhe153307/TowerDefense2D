@@ -42,5 +42,9 @@ public class KnightTower : Tower
         GameObject go = ObjectPool.SharedInstance.GetPooledObject("PinkBullet");
         return go;
     }
+    protected override void PlaySound()
+    {
+        AudioManager.Play(AudioClipName.KnightTowerShoot);
+    }
 }
 
