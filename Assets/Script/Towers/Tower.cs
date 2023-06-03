@@ -16,13 +16,8 @@ public abstract class Tower : MonoBehaviour, ITower
     {
         get { return range; }
     }
-    public string TowerName { get; set; }
     public int Price { get; set; }
     public int TowerLevel { get; set; }
-
-    public void Initialize()
-    {
-    }
     // Start is called before the first frame update
     protected virtual void Start()
     {

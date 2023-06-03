@@ -31,6 +31,20 @@ namespace Assets.Script.Common
             } else if(interface_.transform.Find("BuyArcherLv3Button") != null && interface_.transform.Find("BuyArcherLv3Button").GetComponent<UpgradeToArcherTowerLv3ButtonController>() != null){
                 interface_.transform.Find("BuyArcherLv3Button").GetComponent<UpgradeToArcherTowerLv3ButtonController>().Initialize(selected);
             }
+            if(interface_.transform.Find("BuyKnightLv1Button") != null && interface_.transform.Find("BuyKnightLv1Button").GetComponent<OnClickCPInterface>() != null){
+                interface_.transform.Find("BuyKnightLv1Button").GetComponent<OnClickCPInterface>().Initialize(selected);
+            } else if(interface_.transform.Find("BuyKnightLv2Button") != null && interface_.transform.Find("BuyKnightLv2Button").GetComponent<UpgradeToKnightTowerLv2ButtonController>() != null){
+                interface_.transform.Find("BuyKnightLv2Button").GetComponent<UpgradeToKnightTowerLv2ButtonController>().Initialize(selected);
+            } else if(interface_.transform.Find("BuyKnightLv3Button") != null && interface_.transform.Find("BuyKnightLv3Button").GetComponent<UpgradeToKnightTowerLv3ButtonController>() != null){
+                interface_.transform.Find("BuyKnightLv3Button").GetComponent<UpgradeToKnightTowerLv3ButtonController>().Initialize(selected);
+            }
+            if(interface_.transform.Find("BuyMagicianLv1Button") != null && interface_.transform.Find("BuyMagicianLv1Button").GetComponent<OnClickCPInterface>() != null){
+                interface_.transform.Find("BuyMagicianLv1Button").GetComponent<OnClickCPInterface>().Initialize(selected);
+            } else if(interface_.transform.Find("BuyMagicianLv2Button") != null && interface_.transform.Find("BuyMagicianLv2Button").GetComponent<UpgradeToMagicianTowerLv2ButtonController>() != null){
+                interface_.transform.Find("BuyMagicianLv2Button").GetComponent<UpgradeToMagicianTowerLv2ButtonController>().Initialize(selected);
+            } else if(interface_.transform.Find("BuyMagicianLv3Button") != null && interface_.transform.Find("BuyMagicianLv3Button").GetComponent<UpgradeToMagicianTowerLv3ButtonController>() != null){
+                interface_.transform.Find("BuyMagicianLv3Button").GetComponent<UpgradeToMagicianTowerLv3ButtonController>().Initialize(selected);
+            }
             if(interface_.transform.Find("SellButton") != null && interface_.transform.Find("SellButton").GetComponent<SellButtonController>() != null){
                 interface_.transform.Find("SellButton").GetComponent<SellButtonController>().Initialize(selected);
             }

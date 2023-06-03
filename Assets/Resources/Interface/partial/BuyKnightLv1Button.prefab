@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -1032526499
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1355664573, guid: ef1dfee58edb3734cbe1741fcf1a7012, type: 3}
+  m_Sprite: {fileID: -1043737530, guid: 657606afe1fa9814596cde1ddb9462f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8757737614033683819}
   - component: {fileID: 267953773221838853}
   m_Layer: 0
-  m_Name: BuyArcherLv1Button
+  m_Name: BuyKnightLv1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factories:
   - {fileID: 3248826341185828469}
-  towerType: Archer
+  towerType: Knight
 --- !u!1 &6176955309437707720
 GameObject:
   m_ObjectHideFlags: 0

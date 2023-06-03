@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 3875902989354106450}
   - component: {fileID: 8294685018437746808}
   - component: {fileID: 8740205059965808018}
-  - component: {fileID: -5036111162760756333}
+  - component: {fileID: 8861578031159332686}
   m_Layer: 0
-  m_Name: ArcherTowerLv3
+  m_Name: KnightTowerLv3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: -387832189
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1351346406, guid: ef1dfee58edb3734cbe1741fcf1a7012, type: 3}
+  m_Sprite: {fileID: -1410931354, guid: 657606afe1fa9814596cde1ddb9462f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -188,7 +188,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 1.21}
+    oldSize: {x: 0.64, y: 1.16}
     newSize: {x: 0.64, y: 1.21}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -197,7 +197,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 1.21}
   m_EdgeRadius: 0
---- !u!114 &-5036111162760756333
+--- !u!114 &8861578031159332686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,11 +206,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7767327226501670622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ee46e346bf9f4f418d06769260a4b73, type: 3}
+  m_Script: {fileID: 11500000, guid: bbc4d3a4fcb5d5249ab1ecbd5433d7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0.5
   range: 12
-  towerName: ArcherLevel3
   price: 120
   towerLevel: 3

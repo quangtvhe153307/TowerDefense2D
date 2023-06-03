@@ -10,6 +10,8 @@ public class BuyUIController : MonoBehaviour
     {
         SelectEventManager.AddSelectCPEventListener(HandleSelectCPEvent);
         SelectEventManager.AddselectArcherTowerEventListener(HandleSelectArcherTowerEvent);
+        SelectEventManager.AddselectKnightTowerEventListener(HandleSelectKnightTowerEvent);
+        SelectEventManager.AddselectMagicianTowerEventListener(HandleSelectMagicianTowerEvent);
     }
 
 
@@ -19,6 +21,18 @@ public class BuyUIController : MonoBehaviour
     }
     void HandleSelectArcherTowerEvent(GameObject gameObject, int level)
     {
-        Common.showCPInterface("ArcherLevel" + level, GameObject.Find("UI/BuyUI"), gameObject);
+        HandleShowInterface("Archer", gameObject, level);
+    }
+    void HandleSelectKnightTowerEvent(GameObject gameObject, int level)
+    {
+        HandleShowInterface("Knight", gameObject, level);
+    }
+    void HandleSelectMagicianTowerEvent(GameObject gameObject, int level)
+    {
+        HandleShowInterface("Magician", gameObject, level);
+    }
+    void HandleShowInterface(string towerType, GameObject gameObject, int level)
+    {
+        Common.showCPInterface($"{towerType}Level{level}", GameObject.Find("UI/BuyUI"), gameObject);
     }
 }

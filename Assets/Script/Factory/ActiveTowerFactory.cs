@@ -6,23 +6,10 @@ using UnityEngine.UIElements;
 
 public class ActiveTowerFactory : TowerFactory
 {
-    public override ITower CreateTower(string towerType, int towerLevel, Vector3 position)
+    public override void CreateTower(string towerType, int towerLevel, Vector3 position)
     {
-        switch (towerType)
-        {
-            case "archer":
-                return CreateArcherTower(towerLevel, position);
-            default:
-                return null;
-        }
-    }
-    private ITower CreateArcherTower(int towerLevel, Vector3 position)
-    {
-        GameObject prefab = (GameObject)Resources.Load("prefabs/Towers/ArcherTowerLv" + towerLevel);
+        GameObject prefab = (GameObject)Resources.Load($"prefabs/Towers/{towerType}TowerLv{towerLevel}");
         GameObject instance = Instantiate(prefab, position, Quaternion.identity);
-        instance.transform.SetParent(GameObject.Find("ArcherTowers").transform);
-        ArcherTower newTower = instance.GetComponent<ArcherTower>();
-        newTower.Initialize();
-        return newTower;
+        instance.transform.SetParent(GameObject.Find($"{towerType}Towers").transform);
     }
 }

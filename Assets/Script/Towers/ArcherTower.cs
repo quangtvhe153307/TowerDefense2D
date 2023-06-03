@@ -9,20 +9,12 @@ using UnityEngine.Events;
 public class ArcherTower : Tower
 {
     [SerializeField]
-    private string towerName;
-    [SerializeField]
     private int price;
     [SerializeField]
     private int towerLevel;
-    public string TowerName { get => towerName; set => towerName = value; }
     public int Price { get => price; set => price = value; }
     public int TowerLevel { get => towerLevel; set=> towerLevel = value; }
     SelectTowerEvent selectEvent = new SelectTowerEvent();
-    public void Initialize()
-    {
-        gameObject.name = towerName;
-        transform.Find("SelectCircle").gameObject.SetActive(false);
-    }
     protected override GameObject GetPooledBullet()
     {
         GameObject go = ObjectPool.SharedInstance.GetPooledObject("ArrowBullet");
@@ -31,6 +23,8 @@ public class ArcherTower : Tower
 
     protected override void Start()
     {
+        gameObject.name = $"ArcherLevel{TowerLevel}";
+        transform.Find("SelectCircle").gameObject.SetActive(false);
         SelectEventManager.AddSelectArcherTowerEventInvoker(this);
         //cooldown = 0.1f;
         //range = 7;
@@ -48,10 +42,6 @@ public class ArcherTower : Tower
         }
         transform.Find("SelectCircle").gameObject.SetActive(true);
         selectEvent.Invoke(this.gameObject, TowerLevel);
-    }
-    protected override void Update()
-    {
-        base.Update();
     }
     /// <summary>
     /// Rotate arrow to enemy's direction

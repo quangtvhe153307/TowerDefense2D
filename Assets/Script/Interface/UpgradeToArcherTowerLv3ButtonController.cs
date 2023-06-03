@@ -17,6 +17,6 @@ public class UpgradeToArcherTowerLv3ButtonController : ButtonInterface
     }
     private void InstantiateTower(){
         Vector3 cpos = SelectedTower.transform.position;
-        ITower tower = factory.CreateTower("archer", 3, cpos);
+        factory.CreateTower("Archer", 3, cpos);
     }
 }

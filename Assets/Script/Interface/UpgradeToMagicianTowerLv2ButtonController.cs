@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeToArcherTowerLv2ButtonController : ButtonInterface
+public class UpgradeToMagicianTowerLv2ButtonController : ButtonInterface
 {
     [SerializeField] TowerFactory[] factories;
     private TowerFactory factory;
@@ -17,6 +17,6 @@ public class UpgradeToArcherTowerLv2ButtonController : ButtonInterface
     }
     private void InstantiateTower(){
         Vector3 cpos = SelectedTower.transform.position;
-        factory.CreateTower("Archer", 2, cpos);
+        factory.CreateTower("Magician", 2, cpos);
     }
 }

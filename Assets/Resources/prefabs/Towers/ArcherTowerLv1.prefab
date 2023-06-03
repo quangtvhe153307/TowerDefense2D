@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 695106241
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: -387832189
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1355664573, guid: ef1dfee58edb3734cbe1741fcf1a7012, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1.2
   range: 8
-  towerName: ArcherLevel1
+  towerType: Archer
   price: 40
   towerLevel: 1
 --- !u!1 &6863181255092653544
@@ -190,8 +190,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 695106241
-  m_SortingLayer: 0
+  m_SortingLayerID: -387832189
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.43137255}

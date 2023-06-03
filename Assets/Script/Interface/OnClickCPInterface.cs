@@ -6,6 +6,7 @@ using UnityEngine;
 public class OnClickCPInterface : MonoBehaviour
 {
     [SerializeField] TowerFactory[] factories;
+    [SerializeField] private string towerType;
     private TowerFactory factory;
     private GameObject selectedCP;
     public void Initialize(GameObject selected){
@@ -36,6 +37,6 @@ public class OnClickCPInterface : MonoBehaviour
     {
         Vector3 cpos = selectedCP.transform.position;
         cpos.y = cpos.y + 0.1f;
-        ITower tower = factory.CreateTower("archer", 1, cpos);
+        factory.CreateTower(towerType, 1, cpos);
     }
 }

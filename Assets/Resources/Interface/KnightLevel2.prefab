@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5333848399379632756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1528115476271481350}
+  m_Layer: 0
+  m_Name: KnightLevel2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1528115476271481350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5333848399379632756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1658979336018785691}
+  - {fileID: 102455703273581559}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2440558931933646672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1528115476271481350}
+    m_Modifications:
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776484506749783952, guid: a7be394521881204db184d3e94db7b73, type: 3}
+      propertyPath: m_Name
+      value: SellButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7be394521881204db184d3e94db7b73, type: 3}
+--- !u!4 &102455703273581559 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2356901587568977063, guid: a7be394521881204db184d3e94db7b73, type: 3}
+  m_PrefabInstance: {fileID: 2440558931933646672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4182206871827253379
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1528115476271481350}
+    m_Modifications:
+    - target: {fileID: 2766678208497114672, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_Name
+      value: BuyKnightLv3Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+--- !u!4 &1658979336018785691 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3247040455634517272, guid: df6e9095082f06147b472e5cc62c30e4, type: 3}
+  m_PrefabInstance: {fileID: 4182206871827253379}
+  m_PrefabAsset: {fileID: 0}
