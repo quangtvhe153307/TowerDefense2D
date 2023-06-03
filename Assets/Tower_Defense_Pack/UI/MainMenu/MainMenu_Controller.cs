@@ -11,10 +11,38 @@ public class MainMenu_Controller : MonoBehaviour {
 	private bool move=false;
 	private bool auxmove=false;
 	private Vector3 firstpos;
-	// Use this for initialization
+    // Use this for initialization
 
+    private void Awake()
+    {
+		LoadPrefs();
+    }
 
-	void Start () {
+    public void LoadPrefs()
+    {
+		int unbox = PlayerPrefs.GetInt("Unbox", 0);
+        int idScene = PlayerPrefs.GetInt("Scene", 0);
+        if (unbox == 0)
+		{
+            
+            PlayerPrefs.SetInt("Scene", 0);
+            Debug.Log("Scene: " + idScene);
+        }
+		else
+		{
+            //int idScene = PlayerPrefs.GetInt("Scene", 0);
+            Debug.Log("Scene: " + idScene);
+            if (idScene != 0)
+            {
+                Debug.Log("Scene: " + idScene);
+            }
+        }
+        PlayerPrefs.SetInt("Unbox", 1);//1 for release ; 0 for test
+		PlayerPrefs.Save();
+
+    }
+
+    void Start () {
 		title=GameObject.Find("Title");
 		pressStart=GameObject.Find("pressStart");
 		//start=GameObject.Find("Start");

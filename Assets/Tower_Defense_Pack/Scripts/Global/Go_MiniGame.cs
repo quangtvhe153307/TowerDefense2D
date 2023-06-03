@@ -5,34 +5,47 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class Go_MiniGame : MonoBehaviour {
-	public Sprite StartClicked;
-	private Sprite auxClicked;
+public class Go_MiniGame : MonoBehaviour
+{
+    public Sprite StartClicked;
+    private Sprite auxClicked;
+    [SerializeField] private GameObject quit;
 
-	// Use this for initialization
-	void Start () {
-		auxClicked = GetComponent<SpriteRenderer>().sprite;
-	}
+    private void Awake()
+    {
+        quit.SetActive(true);
+    }
 
-	void OnMouseDown() {GetComponent<SpriteRenderer>().sprite = StartClicked;}
-	void OnMouseUp(){
-		GetComponent<SpriteRenderer>().sprite = auxClicked;
-		Exit();
-	}
+    // Use this for initialization
+    void Start()
+    {
+        auxClicked = GetComponent<SpriteRenderer>().sprite;
+    }
 
-	public void Exit(){Invoke("CrossfadeDelayed",0.5f);}
+    void OnMouseDown() { GetComponent<SpriteRenderer>().sprite = StartClicked; }
+    void OnMouseUp()
+    {
+        GetComponent<SpriteRenderer>().sprite = auxClicked;
+        Exit();
+        quit.SetActive(false);
+    }
 
-	private void CrossfadeDelayed(){
-		GameObject.Find("Crossfade").GetComponent<Animator>().SetBool("out",true);
-		Invoke("ExitDelayed",2f);
-	}
+    public void Exit() { Invoke("CrossfadeDelayed", 0.5f); }
 
-	private void ExitDelayed(){
-		if(this.gameObject.name=="Start"){
-			Application.LoadLevel("Example_Scene");
-		}if(this.gameObject.name=="StartPhone"){
-			Application.LoadLevel("Phone_Example_Scene");
-		}
-	}
+    private void CrossfadeDelayed()
+    {
+        GameObject.Find("Crossfade").GetComponent<Animator>().SetBool("out", true);
+        Invoke("ExitDelayed", 2f);
+    }
+
+    private void ExitDelayed()
+    {
+        if (this.gameObject.name == "Start")
+        {
+            SceneManager.LoadScene("Scene1");
+
+        }
+    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowBullet : Bullet
 {
-    public float ArrowDirection { get; set; } = 90;
+    public float ArrowDirection { get; set; } = 180;
     protected override void Start()
     {
         base.Start();
