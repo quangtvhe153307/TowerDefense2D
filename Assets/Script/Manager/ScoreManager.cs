@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScoreKillEnemy(int enemyPoint)
     {
         currentScore += enemyPoint;
-        Debug.Log("Current Score: "+ currentScore );
+        //Debug.Log("Current Score: "+ currentScore );
     }
 
     public static void SubtractScoreUpgradeTower(int upgradeCost)

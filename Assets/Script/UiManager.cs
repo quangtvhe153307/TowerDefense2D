@@ -4,10 +4,12 @@ using UnityEngine.SceneManagement;
 public class UiManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseScreen;
+    [SerializeField] private GameObject nextScreen;
 
     private void Awake()
     {
         pauseScreen.SetActive(false);
+        nextScreen.SetActive(false);
 
     }
     // Start is called before the first frame update
@@ -32,6 +34,22 @@ public class UiManager : MonoBehaviour
             }
 
         }
+
+        //test next game
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            if (pauseScreen.activeInHierarchy)
+            {
+                NextGameDisplay(false);
+            }
+
+            else
+            {
+                NextGameDisplay(true);
+            }
+
+        }
+        //--------------------
     }
     public void PauseGame(bool status)
     {
@@ -54,13 +72,27 @@ public class UiManager : MonoBehaviour
         }
 
     }
+
+    public void NextGameDisplay(bool status)
+    {
+        //if status == true pause
+        nextScreen.SetActive(status);
+    }
+
+    public void NextGame()
+    {
+        SceneManager.LoadScene(2);
+        PlayerPrefs.SetInt("Scene", 2);
+        PlayerPrefs.Save();
+    }
+
     public void Quit()
     {
         //    Time.timeScale = 1;
         //    GameObject objectToDisable = GameObject.FindWithTag("Player");
         //    objectToDisable.GetComponent<MovementController>().enabled = true;
         //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        SceneManager.LoadScene("HookGame");
+        SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
 

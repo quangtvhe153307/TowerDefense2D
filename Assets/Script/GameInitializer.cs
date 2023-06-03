@@ -18,7 +18,9 @@ public class GameInitializer : MonoBehaviour
     //}
     private void Awake()
     {
+        PlayerPrefs.SetInt("Scene", 1);
         EventManager.Initialize();
     }
+
 }
 
