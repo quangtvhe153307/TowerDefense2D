@@ -16,14 +16,17 @@ public abstract class Tower : MonoBehaviour, ITower
     {
         get { return range; }
     }
-    public int Price { get; set; }
-    public int TowerLevel { get; set; }
+    [SerializeField]
+    protected int Price;
+    [SerializeField]
+    protected int towerLevel;
     // Start is called before the first frame update
     protected virtual void Start()
     {
         shootCoolDownTimer= gameObject.AddComponent<Timer>();
         shootCoolDownTimer.Duration = cooldown;
         shootCoolDownTimer.Run();
+        transform.Find("SelectCircle").gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -65,9 +68,15 @@ public abstract class Tower : MonoBehaviour, ITower
         return false;
     }
     protected abstract GameObject GetPooledBullet();
+    protected virtual void OnMouseDown(){
+        if (GameObject.Find("SelectCircle"))
+        {
+            GameObject.Find("SelectCircle").gameObject.SetActive(false);
+        }
+        transform.Find("SelectCircle").gameObject.SetActive(true);
+    }
 
     protected virtual void RotateBullet(GameObject gameObject, Vector3 towerPosition ,Vector3 destination)
     {
-
     }
 }

@@ -211,5 +211,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.5
   range: 12
-  price: 120
+  Price: 120
   towerLevel: 3

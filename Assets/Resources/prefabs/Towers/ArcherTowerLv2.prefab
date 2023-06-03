@@ -127,8 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.7
   range: 8
-  towerName: ArcherLevel2
-  price: 60
+  Price: 60
   towerLevel: 2
 --- !u!1 &5418348279456495394
 GameObject:

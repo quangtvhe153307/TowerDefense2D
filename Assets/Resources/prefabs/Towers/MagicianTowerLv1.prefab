@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1.2
   range: 8
-  price: 40
+  Price: 40
   towerLevel: 1
 --- !u!1 &6863181255092653544
 GameObject:

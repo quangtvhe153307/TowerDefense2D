@@ -8,17 +8,10 @@ using UnityEngine.Events;
 
 public class MagicianTower : Tower
 {
-    [SerializeField]
-    private int price;
-    [SerializeField]
-    private int towerLevel;
-    public int Price { get => price; set => price = value; }
-    public int TowerLevel { get => towerLevel; set=> towerLevel = value; }
     SelectTowerEvent selectEvent = new SelectTowerEvent();
     protected override void Start()
     {
-        gameObject.name = $"MagicianLevel{TowerLevel}";
-        transform.Find("SelectCircle").gameObject.SetActive(false);
+        gameObject.name = $"MagicianLevel{towerLevel}";
         SelectEventManager.AddSelectMagicianTowerEventInvoker(this);
         //cooldown = 0.4f;
         //range = 5;
@@ -33,14 +26,10 @@ public class MagicianTower : Tower
     {
         selectEvent.AddListener(listener);
     }
-    void OnMouseDown()
+    protected override void OnMouseDown()
     {
-        if (GameObject.Find("SelectCircle"))
-        {
-            GameObject.Find("SelectCircle").gameObject.SetActive(false);
-        }
-        transform.Find("SelectCircle").gameObject.SetActive(true);
-        selectEvent.Invoke(this.gameObject, TowerLevel);
+        base.OnMouseDown();
+        selectEvent.Invoke(this.gameObject, towerLevel);
     }
 }
 
