@@ -8,13 +8,6 @@ using UnityEngine.Events;
 
 public class KnightTower : Tower
 {
-    SelectTowerEvent selectEvent = new SelectTowerEvent();
-    protected override GameObject GetPooledBullet()
-    {
-        GameObject go = ObjectPool.SharedInstance.GetPooledObject("PinkBullet");
-        return go;
-    }
-
     protected override void Start()
     {
         gameObject.name = $"KnightLevel{towerLevel}";
@@ -23,14 +16,10 @@ public class KnightTower : Tower
         //range = 3;
         base.Start();
     }
-    public void AddSelectCPEventListener(UnityAction<GameObject, int> listener)
+    protected override GameObject GetPooledBullet()
     {
-        selectEvent.AddListener(listener);
-    }
-    protected override void OnMouseDown()
-    {
-        base.OnMouseDown();
-        selectEvent.Invoke(this.gameObject, towerLevel);
+        GameObject go = ObjectPool.SharedInstance.GetPooledObject("PinkBullet");
+        return go;
     }
 }
 

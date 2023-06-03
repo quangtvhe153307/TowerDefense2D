@@ -8,13 +8,6 @@ using UnityEngine.Events;
 
 public class ArcherTower : Tower
 {
-    SelectTowerEvent selectEvent = new SelectTowerEvent();
-    protected override GameObject GetPooledBullet()
-    {
-        GameObject go = ObjectPool.SharedInstance.GetPooledObject("ArrowBullet");
-        return go;
-    }
-
     protected override void Start()
     {
         gameObject.name = $"ArcherLevel{towerLevel}";
@@ -23,20 +16,11 @@ public class ArcherTower : Tower
         //range = 7;
         base.Start();
     }
-    public void AddSelectCPEventListener(UnityAction<GameObject, int> listener)
+    protected override GameObject GetPooledBullet()
     {
-        selectEvent.AddListener(listener);
+        GameObject go = ObjectPool.SharedInstance.GetPooledObject("ArrowBullet");
+        return go;
     }
-    protected override void OnMouseDown()
-    {
-        base.OnMouseDown();
-        selectEvent.Invoke(this.gameObject, towerLevel);
-    }
-    /// <summary>
-    /// Rotate arrow to enemy's direction
-    /// </summary>
-    /// <param name="gameObject"></param>
-    /// <param name="destination"></param>
     protected override void RotateBullet(GameObject gameObject, Vector3 towerPosition,Vector3 destination)
     {
         Vector3 direction = destination - towerPosition;
