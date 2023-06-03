@@ -2,34 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public static class ScoreManager
 {
-     [SerializeField] public static int currentScore;
+    public static int currentScore;
+
     // Start is called before the first frame update
-    void Start()
+    public static void Initialize()
     {
         currentScore = ConfigurationUtils.DefaultScore;
          EventManager.AddListener(EventName.ScoreAddedEvent, AddScoreKillEnemy);
+       //  currentScore = ConfigurationUtils.defaultScore;
+         currentScore = 50;
     }
 
-    public void AddScoreKillEnemy(int enemyPoint)
+    public static void AddScoreKillEnemy(int enemyPoint)
     {
         currentScore += enemyPoint;
         StatusScore.currentScore = currentScore;
       //  Debug.Log("Current Score: "+ currentScore );
     }
 
-    public static void SubtractScoreUpgradeTower(int upgradeCost)
+    public static bool SubtractScoreUpgradeTower(int upgradeCost)
     {
         if (currentScore >= upgradeCost)
         {
             currentScore -= upgradeCost;
             StatusScore.currentScore = currentScore;
          //   Debug.Log("Current Score: "+ currentScore );
+            return true;
         }
         else
         {
             Debug.Log("Can't Upgrade!");
+            return false;
         }
     }
 

@@ -6,14 +6,18 @@ public class UpgradeToMagicianTowerLv2ButtonController : ButtonInterface
 {
     [SerializeField] TowerFactory[] factories;
     private TowerFactory factory;
+
     void Start()
     {
         factory = factories[0];
     }
     void OnMouseDown()
     {
-        InstantiateTower();
-        Invoke("onDestroy", 0);
+         int  price = ConfigurationUtils.PriceMagicianLv2;
+        if(ScoreManager.SubtractScoreUpgradeTower(price)){
+            InstantiateTower();
+            Invoke("onDestroy", 0);
+        }
     }
     private void InstantiateTower(){
         Vector3 cpos = SelectedTower.transform.position;

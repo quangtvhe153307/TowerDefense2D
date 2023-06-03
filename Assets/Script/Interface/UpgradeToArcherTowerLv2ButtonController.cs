@@ -12,8 +12,12 @@ public class UpgradeToArcherTowerLv2ButtonController : ButtonInterface
     }
     void OnMouseDown()
     {
-        InstantiateTower();
-        Invoke("onDestroy", 0);
+        int  price = ConfigurationUtils.PriceArcherLv2;
+        if(ScoreManager.SubtractScoreUpgradeTower(price)){
+            InstantiateTower();
+            Invoke("onDestroy", 0);
+        }
+
     }
     private void InstantiateTower(){
         Vector3 cpos = SelectedTower.transform.position;

@@ -9,6 +9,7 @@ public class OnClickCPInterface : MonoBehaviour
     [SerializeField] private string towerType;
     private TowerFactory factory;
     private GameObject selectedCP;
+
     public void Initialize(GameObject selected){
         selectedCP = selected;
     }
@@ -21,7 +22,21 @@ public class OnClickCPInterface : MonoBehaviour
     }
     void OnMouseDown()
     {
-        createTowerLevel1();
+        int price = 0;
+        switch(towerType){
+           case "Archer":
+                price = ConfigurationUtils.PriceArcherLv1;
+                break;
+            case "Knight":
+                price = ConfigurationUtils.PriceKnightLv1;
+            break;
+            case "Magician":
+                price = ConfigurationUtils.PriceMagicianLv1;
+            break;
+        }
+        if(ScoreManager.SubtractScoreUpgradeTower(price)){
+            createTowerLevel1();
+        }
     }
     void createTowerLevel1()
     {
@@ -39,4 +54,5 @@ public class OnClickCPInterface : MonoBehaviour
         cpos.y = cpos.y + 0.1f;
         factory.CreateTower(towerType, 1, cpos);
     }
+
 }
