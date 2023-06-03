@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public abstract class Tower : MonoBehaviour, ITower
 {
+    protected int damage;
     [SerializeField]
     protected float cooldown;
     [SerializeField]

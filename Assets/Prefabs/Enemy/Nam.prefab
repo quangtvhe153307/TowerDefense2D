@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7326639631611169495}
   - component: {fileID: 5569902019478383281}
   - component: {fileID: 3718347822543121752}
-  - component: {fileID: 2782450855675896471}
+  - component: {fileID: 2678265161387807295}
   m_Layer: 0
   m_Name: Nam
   m_TagString: Enemy
@@ -128,7 +128,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2782450855675896471
+--- !u!114 &2678265161387807295
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,9 +137,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 702748021913537014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c48f63a0e2cfbc4b97fe4d2cf3cec91, type: 3}
+  m_Script: {fileID: 11500000, guid: 311683f96fcd140448236618bbf67128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  moveSpeed: 3
+  rb: {fileID: 3718347822543121752}
+  moveSpeed: 2
   health: 0
+  score: 0
