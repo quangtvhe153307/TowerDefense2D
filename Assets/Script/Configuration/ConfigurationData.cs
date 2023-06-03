@@ -1,4 +1,3 @@
-using Assets.Script.Manager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,10 +28,20 @@ public class ConfigurationData
     static float ThomoveSpeed = 2f;
     static int ThohealthEnemy = 100;
     static int ThoscoreEnemy = 100;
-    //default value of tower
-
+    //default value of archer tower
+    static float CooldownArcher;
+    static float RangeArcher;
+    static int PriceAcher;
+    //default value of Knight tower
+    static float CooldownKnight;
+    static float RangeKnight;
+    static int PriceKnight;
+    //default value of Magician tower
+    static float CooldownMagician;
+    static float RangeMagician;
+    static int PriceMagician;
     //default wave enemy
-/*    static List<Wave> waves;*/
+    /*    static List<Wave> waves;*/
     static float timeBetweenWaves = 10f;
     //default object pooling count
 
@@ -107,6 +116,42 @@ public class ConfigurationData
     {
         get { return timeBetweenWaves; }
     }
+    public float cooldownArcher
+    {
+        get { return CooldownArcher; }
+    }
+    public float rangeArcher
+    {
+        get { return RangeArcher; }
+    }
+    public int priceArcher
+    {
+        get { return PriceAcher; }
+    }
+    public float cooldownKnight
+    {
+        get { return CooldownKnight; }
+    }
+    public float rangeKnight
+    {
+        get { return RangeKnight; }
+    }
+    public int priceKnight
+    {
+        get { return PriceKnight; }
+    }
+    public float cooldownMagician
+    {
+        get { return CooldownMagician; }
+    }
+    public float rangeMagician
+    {
+        get { return RangeMagician; }
+    }
+    public int priceMagician
+    {
+        get { return PriceMagician; }
+    }
     public ConfigurationData()
     {
         // read and save configuration data from file
@@ -156,7 +201,16 @@ public class ConfigurationData
         ThohealthEnemy = int.Parse(values[13]);
         ThoscoreEnemy = int.Parse(values[14]);
         timeBetweenWaves = float.Parse(values[15]);
-       /* waves = AddListWave(listValue);*/
+        CooldownArcher = float.Parse(values[16]);
+        RangeArcher = float.Parse(values[17]);
+        PriceAcher = int.Parse(values[18]);
+        CooldownKnight = float.Parse(values[19]);
+        RangeKnight = float.Parse(values[20]);
+        PriceKnight = int.Parse(values[21]);
+        CooldownMagician = float.Parse(values[22]);
+        RangeMagician = float.Parse(values[23]);
+        PriceMagician = int.Parse(values[24]);
+        /* waves = AddListWave(listValue);*/
     }
     /*static List<Wave> AddListWave(string listvalue)
     {

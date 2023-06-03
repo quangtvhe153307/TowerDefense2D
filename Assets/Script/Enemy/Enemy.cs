@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class Enemy : IntEventInvoker
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [Header("Attributes")]
-     public float moveSpeed;
-     public int health;
-     public int score;
-
+    public float moveSpeed;
+    public int health;
+    public int score;
 
     private Transform target;
     private int pathIndex;
@@ -30,10 +28,13 @@ public class Enemy : IntEventInvoker
 
         changedDirectionTimes = 0;
 
-        /*unityEvents.Add(EventName.AddScoreEvent, new AddScoreEvent());
-        EventManager.AddInvoker(EventName.AddScoreEvent, this);*/
+        unityEvents.Add(EventName.ScoreAddedEvent, new ScoreAddedEvent());
+        EventManager.AddInvoker(EventName.ScoreAddedEvent, this);
 
-        EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
+        unityEvents.Add(EventName.HouseAttackedEvent, new HouseAttackedEvent());
+        EventManager.AddInvoker(EventName.HouseAttackedEvent, this);
+
+        //EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
     }
 
     protected virtual void Update()
@@ -52,6 +53,7 @@ public class Enemy : IntEventInvoker
                 target = PathFinding.main.path[pathIndex];
             }
         }
+
     }
 
     private void FixedUpdate()
@@ -59,7 +61,6 @@ public class Enemy : IntEventInvoker
         Vector2 direction = (target.position - transform.position).normalized;
         rb.velocity = direction * moveSpeed;
     }
-
     /// <summary>
     /// Subtract enemy's healthy when bullet reached
     /// </summary>
@@ -67,16 +68,31 @@ public class Enemy : IntEventInvoker
     public void SubtractHealth(int points)
     {
         health -= points;
-       // Debug.Log("Health: " + health);
-        if (health <= 0)
-        {
-            Death();
+        //Debug.Log("Subtract 10 points");
+        if(health <= 0){
+            this.Death();
         }
     }
 
-    public void Death()
-    {
-        /*//Invoke event when enemy death
-        unityEvents[EventName.AddScoreEvent].Invoke(score);*/
+    private void Death(){
+        //Instantiate death prefab and play sound
+        //this.gameObject.SetActive(false);
+        Destroy(gameObject);
+
+        //Invoke event when enemy death
+        unityEvents[EventName.ScoreAddedEvent].Invoke(this.score);
+        AudioManager.Play(AudioClipName.Death);
     }
+
+    protected void OnTriggerEnter2D(Collider2D collision){
+        if (collision.CompareTag("House")){
+            // House house = collision.gameObject.GetComponent<House>();
+            // house.TakeDamage(this.damage);
+
+            //Invoke event when enemy attack house
+            unityEvents[EventName.HouseAttackedEvent].Invoke(1);
+
+        }
+    }
+
 }

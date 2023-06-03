@@ -1,3 +1,3 @@
-boSpeed,boHealth,boScore,gaSpeed,gaHealth,gaScore,namSpeed,namHealth,namScore,slimeSpeed,slimeHealth,slimeScore,thoSpeed,thoHealth,thoScore,timeBetweenWaves
-3,200,100,4,250,150,5,300,200,6,350,250,7,400,300,10
-10,2,Bo,10,2,Ga,,,,,,,,,,
+boSpeed,boHealth,boScore,gaSpeed,gaHealth,gaScore,namSpeed,namHealth,namScore,slimeSpeed,slimeHealth,slimeScore,thoSpeed,thoHealth,thoScore,timeBetweenWaves,CooldownArcher,RangeArcher,PriceAcher,CooldownKnight,RangeKnight,PriceKnight,CooldownMagician,RangeMagician,PriceMagician
+3,200,100,4,250,150,5,300,200,6,350,250,7,400,300,10,0.1,7,100,0.4,3,200,0.4,5,300
+10,2,Bo,10,2,Ga,,,,,,,,,,,,,,,,,,,

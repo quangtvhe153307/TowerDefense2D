@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1034869998613487293}
   - component: {fileID: 3931669541058774090}
+  - component: {fileID: -8265180063729197982}
   m_Layer: 0
   m_Name: Tower 01_0
   m_TagString: Untagged
@@ -84,3 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8265180063729197982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869895412371539392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee46e346bf9f4f418d06769260a4b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.1
+  range: 7
+  towerName: ArcherLevel1
+  price: 0
+  towerLevel: 0

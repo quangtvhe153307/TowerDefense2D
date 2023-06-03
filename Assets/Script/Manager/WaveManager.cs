@@ -12,7 +12,7 @@ public class WaveManager : MonoBehaviour
     private float timeUntilNextWave;
     private void Start()
     {
-/*        waves = ConfigurationUtils.Waves;*/
+        /*        waves = ConfigurationUtils.Waves;*/
         timeBetweenWaves = ConfigurationUtils.TimeBetweenWaves;
         foreach (Wave wave in waves)
         {
@@ -57,7 +57,7 @@ public class WaveManager : MonoBehaviour
     public static GameObject GetTarget(Tower tower)
     {
         List<GameObject> targetsInRange = GetTargetsInRange(tower);
-        if (targetsInRange == null || targetsInRange.Count == 0)
+        if(targetsInRange == null || targetsInRange.Count == 0)
         {
             return null;
         }
@@ -97,13 +97,13 @@ public class WaveManager : MonoBehaviour
     /// <returns></returns>
     private static GameObject FindClosestTargetToTheEnd(List<GameObject> targets)
     {
-        if (targets is null || targets.Count == 0) { return null; }
+        if(targets is null || targets.Count == 0) { return null; }
         float shortestSqrDistance = float.MaxValue;
         GameObject closestTarget = null;
         foreach (var target in targets)
         {
             float sqrDistance = PathFinding.main.SqrDistanceToTheEnd(target);
-            if (sqrDistance < shortestSqrDistance)
+            if(sqrDistance < shortestSqrDistance)
             {
                 shortestSqrDistance = sqrDistance;
                 closestTarget = target;
