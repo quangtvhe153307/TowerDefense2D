@@ -88,7 +88,7 @@ public class Enemy : IntEventInvoker
         if (collision.CompareTag("House")){
             // House house = collision.gameObject.GetComponent<House>();
             // house.TakeDamage(this.damage);
-
+            Debug.Log("Test House collision");
             //Invoke event when enemy attack house
             unityEvents[EventName.HouseAttackedEvent].Invoke(1);
 
