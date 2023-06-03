@@ -109,6 +109,12 @@ public class ConfigurationData
     {
         get { return timeBetweenWaves; }
     }
+    //default score
+    static int DefaultScore = 500;
+    public int defaultScore
+    {
+        get { return DefaultScore; }
+    }
     //default value of archer tower
     static float CooldownArcherLv1;
     static float RangeArcherLv1;
@@ -403,6 +409,7 @@ public class ConfigurationData
             RangeMagicianLv3 = float.Parse(values[49]);
             PriceMagicianLv3 = int.Parse(values[50]);
             DamageMagicianLv3 = int.Parse(values[51]);
+            DefaultScore = int.Parse(values[52]);
         } catch (Exception ex) {
             Debug.Log(ex.Message);
         }

@@ -236,6 +236,10 @@ public static class ConfigurationUtils
     {
         get { return configurationData.KnightBulletSpeed; }
     }
+    public static int DefaultScore
+    {
+        get { return configurationData.defaultScore; }
+    }
     /// <summary>
     /// Initializes the configuration utils
     /// </summary>
