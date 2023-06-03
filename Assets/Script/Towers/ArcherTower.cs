@@ -14,6 +14,27 @@ public class ArcherTower : Tower
         SelectEventManager.AddSelectArcherTowerEventInvoker(this);
         //cooldown = 0.1f;
         //range = 7;
+        if(towerLevel == 1)
+        {
+            cooldown = ConfigurationUtils.CooldownArcherLv1;
+            range = ConfigurationUtils.RangeArcherLv1;
+            Price = ConfigurationUtils.PriceArcherLv1;
+            damage = ConfigurationUtils.DamageArcherLv1;
+        } else if(towerLevel == 2)
+        {
+            cooldown = ConfigurationUtils.CooldownArcherLv2;
+            range = ConfigurationUtils.RangeArcherLv2;
+            Price = ConfigurationUtils.PriceArcherLv2;
+            damage = ConfigurationUtils.DamageArcherLv2;
+        }
+        else if(towerLevel == 3)
+        {
+            cooldown = ConfigurationUtils.CooldownArcherLv3;
+            range = ConfigurationUtils.RangeArcherLv3;
+            Price = ConfigurationUtils.PriceArcherLv3;
+            damage = ConfigurationUtils.DamageArcherLv3;
+        }
+
         base.Start();
     }
     protected override GameObject GetPooledBullet()
