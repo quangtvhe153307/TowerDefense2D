@@ -68,7 +68,7 @@ public class Enemy : IntEventInvoker
     public void SubtractHealth(int points)
     {
         health -= points;
-        Debug.Log("Subtract 10 points");
+        //Debug.Log("Subtract 10 points");
         if(health <= 0){
             this.Death();
         }
