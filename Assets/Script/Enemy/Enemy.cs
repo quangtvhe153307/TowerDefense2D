@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Enemy : IntEventInvoker
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [Header("Attributes")]
-    [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] private int health;
-    [SerializeField] private int score;
+     public float moveSpeed;
+     public int health;
+     public int score;
 
     private Transform target;
     private int pathIndex;
@@ -21,7 +22,7 @@ public class Enemy : IntEventInvoker
     {
         get { return changedDirectionTimes; }
     }
-    private void Start()
+    protected virtual void Start()
     {
         target = PathFinding.main.path[pathIndex];
         rb = GetComponent<Rigidbody2D>();
@@ -37,7 +38,7 @@ public class Enemy : IntEventInvoker
         //EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (Vector2.Distance(target.position, transform.position) <= 0.1f)
         {
@@ -53,7 +54,6 @@ public class Enemy : IntEventInvoker
                 target = PathFinding.main.path[pathIndex];
             }
         }
-
     }
 
     private void FixedUpdate()

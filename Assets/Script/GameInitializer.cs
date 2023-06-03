@@ -18,6 +18,7 @@ public class GameInitializer : MonoBehaviour
     //}
     private void Awake()
     {
+        ConfigurationUtils.Initialize();
         PlayerPrefs.SetInt("Scene", 1);
         EventManager.Initialize();
     }
