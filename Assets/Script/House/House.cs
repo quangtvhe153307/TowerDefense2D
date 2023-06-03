@@ -16,10 +16,7 @@ public class House : IntEventInvoker
         healthBar.SetMaxHealth(maxHealth);
         slider = GameObject.Find("HealthBar");
         DeactiveSliderHealthBar();
-        Debug.Log("Max health: " + maxHealth + "Current health: " + currentHealth);
-
         EventManager.AddListener(EventName.HouseAttackedEvent, TakeDamage);
-        
     }
 
     public void TakeDamage(int damage){
