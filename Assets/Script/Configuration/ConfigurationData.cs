@@ -329,61 +329,67 @@ public class ConfigurationData
     static void SetConfigurationDataFields(string csvValues/*, string listValue*/)
     {
         string[] values = csvValues.Split(',');
-        BomoveSpeed = float.Parse(values[0]);
-        BohealthEnemy = int.Parse(values[1]);
-        BoscoreEnemy = int.Parse(values[2]);
-        GamoveSpeed = float.Parse(values[3]);
-        GahealthEnemy = int.Parse(values[4]);
-        GascoreEnemy = int.Parse(values[5]);
-        NammoveSpeed = float.Parse(values[6]);
-        NamhealthEnemy = int.Parse(values[7]);
-        NamscoreEnemy = int.Parse(values[8]);
-        SlimemoveSpeed = float.Parse(values[9]);
-        SlimehealthEnemy = int.Parse(values[10]);
-        SlimescoreEnemy = int.Parse(values[11]);
-        ThomoveSpeed = float.Parse(values[12]);
-        ThohealthEnemy = int.Parse(values[13]);
-        ThoscoreEnemy = int.Parse(values[14]);
-        timeBetweenWaves = float.Parse(values[15]);
-        //Lv1
-        CooldownArcherLv1 = float.Parse(values[16]);
-        RangeArcherLv1 = float.Parse(values[17]);
-        PriceAcherLv1 = int.Parse(values[18]);
-        DamageArcherLv1 = int.Parse(values[19]);
-        CooldownKnightLv1 = float.Parse(values[20]);
-        RangeKnightLv1 = float.Parse(values[21]);
-        PriceKnightLv1 = int.Parse(values[22]);
-        DamageKnightLv1 = int.Parse(values[23]);
-        CooldownMagicianLv1 = float.Parse(values[24]);
-        RangeMagicianLv1 = float.Parse(values[25]);
-        PriceMagicianLv1 = int.Parse(values[26]);
-        DamageMagicianLv1 = int.Parse(values[27]);
-        //Lv2
-        CooldownArcherLv2 = float.Parse(values[28]);
-        RangeArcherLv2 = float.Parse(values[29]);
-        PriceAcherLv2 = int.Parse(values[30]);
-        DamageArcherLv2 = int.Parse(values[31]);
-        CooldownKnightLv2 = float.Parse(values[32]);
-        RangeKnightLv2 = float.Parse(values[33]);
-        PriceKnightLv2 = int.Parse(values[34]);
-        DamageKnightLv2 = int.Parse(values[35]);
-        CooldownMagicianLv2 = float.Parse(values[36]);
-        RangeMagicianLv2 = float.Parse(values[37]);
-        PriceMagicianLv2 = int.Parse(values[38]);
-        DamageMagicianLv2 = int.Parse(values[39]);
-        //Lv3
-        CooldownArcherLv3 = float.Parse(values[40]);
-        RangeArcherLv3 = float.Parse(values[41]);
-        PriceAcherLv3 = int.Parse(values[42]);
-        DamageArcherLv3 = int.Parse(values[43]);
-        CooldownKnightLv3 = float.Parse(values[44]);
-        RangeKnightLv3 = float.Parse(values[45]);
-        PriceKnightLv3 = int.Parse(values[46]);
-        DamageKnightLv3 = int.Parse(values[47]);
-        CooldownMagicianLv3 = float.Parse(values[48]);
-        RangeMagicianLv3 = float.Parse(values[49]);
-        PriceMagicianLv3 = int.Parse(values[50]);
-        DamageMagicianLv3 = int.Parse(values[51]);
+        try
+        {
+            BomoveSpeed = float.Parse(values[0]);
+            BohealthEnemy = int.Parse(values[1]);
+            BoscoreEnemy = int.Parse(values[2]);
+            GamoveSpeed = float.Parse(values[3]);
+            GahealthEnemy = int.Parse(values[4]);
+            GascoreEnemy = int.Parse(values[5]);
+            NammoveSpeed = float.Parse(values[6]);
+            NamhealthEnemy = int.Parse(values[7]);
+            NamscoreEnemy = int.Parse(values[8]);
+            SlimemoveSpeed = float.Parse(values[9]);
+            SlimehealthEnemy = int.Parse(values[10]);
+            SlimescoreEnemy = int.Parse(values[11]);
+            ThomoveSpeed = float.Parse(values[12]);
+            ThohealthEnemy = int.Parse(values[13]);
+            ThoscoreEnemy = int.Parse(values[14]);
+            timeBetweenWaves = float.Parse(values[15]);
+            //Lv1
+            CooldownArcherLv1 = float.Parse(values[16]);
+            RangeArcherLv1 = float.Parse(values[17]);
+            PriceAcherLv1 = int.Parse(values[18]);
+            DamageArcherLv1 = int.Parse(values[19]);
+            CooldownKnightLv1 = float.Parse(values[20]);
+            RangeKnightLv1 = float.Parse(values[21]);
+            PriceKnightLv1 = int.Parse(values[22]);
+            DamageKnightLv1 = int.Parse(values[23]);
+            CooldownMagicianLv1 = float.Parse(values[24]);
+            RangeMagicianLv1 = float.Parse(values[25]);
+            PriceMagicianLv1 = int.Parse(values[26]);
+            DamageMagicianLv1 = int.Parse(values[27]);
+            //Lv2
+            CooldownArcherLv2 = float.Parse(values[28]);
+            RangeArcherLv2 = float.Parse(values[29]);
+            PriceAcherLv2 = int.Parse(values[30]);
+            DamageArcherLv2 = int.Parse(values[31]);
+            CooldownKnightLv2 = float.Parse(values[32]);
+            RangeKnightLv2 = float.Parse(values[33]);
+            PriceKnightLv2 = int.Parse(values[34]);
+            DamageKnightLv2 = int.Parse(values[35]);
+            CooldownMagicianLv2 = float.Parse(values[36]);
+            RangeMagicianLv2 = float.Parse(values[37]);
+            PriceMagicianLv2 = int.Parse(values[38]);
+            DamageMagicianLv2 = int.Parse(values[39]);
+            //Lv3
+            CooldownArcherLv3 = float.Parse(values[40]);
+            RangeArcherLv3 = float.Parse(values[41]);
+            PriceAcherLv3 = int.Parse(values[42]);
+            DamageArcherLv3 = int.Parse(values[43]);
+            CooldownKnightLv3 = float.Parse(values[44]);
+            RangeKnightLv3 = float.Parse(values[45]);
+            PriceKnightLv3 = int.Parse(values[46]);
+            DamageKnightLv3 = int.Parse(values[47]);
+            CooldownMagicianLv3 = float.Parse(values[48]);
+            RangeMagicianLv3 = float.Parse(values[49]);
+            PriceMagicianLv3 = int.Parse(values[50]);
+            DamageMagicianLv3 = int.Parse(values[51]);
+        } catch (Exception ex) {
+            Debug.Log(ex.Message);
+        }
+        
         /* waves = AddListWave(listValue);*/
     }
     /*static List<Wave> AddListWave(string listvalue)
