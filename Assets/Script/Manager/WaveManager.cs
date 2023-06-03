@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    static string[] listEnemy = {"Bo","Ga","Nam","Slime","Tho"};
     public List<Wave> waves;
     public float timeBetweenWaves;
     private Queue<Wave> waveQueue = new Queue<Wave>();
@@ -41,7 +42,8 @@ public class WaveManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         for (int i = 0; i < wave.enemyCount; i++)
         {
-            GameObject enemy = ObjectPool.SharedInstance.GetPooledObject("Enemy" + wave.enemyName);
+            int randomType = Random.Range(wave.enemyType[0]-1, wave.enemyType[1]);
+            GameObject enemy = ObjectPool.SharedInstance.GetPooledObject("Enemy" + listEnemy[randomType]);
             enemy.SetActive(true);
             enemy.transform.position = transform.position;
             yield return new WaitForSeconds(wave.timeBetweenEnemies);

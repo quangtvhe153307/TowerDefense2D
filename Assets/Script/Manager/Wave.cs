@@ -11,6 +11,6 @@ namespace Assets.Script.Manager
     {
         public int enemyCount;
         public float timeBetweenEnemies;
-        public string enemyName;
+        public int[] enemyType;
     }
 }
