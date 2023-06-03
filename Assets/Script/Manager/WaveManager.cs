@@ -1,3 +1,4 @@
+using Assets.Script.Manager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,14 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     public List<Wave> waves;
-    public float timeBetweenWaves = 10f;
+    public float timeBetweenWaves;
     private Queue<Wave> waveQueue = new Queue<Wave>();
     private Wave currentWave;
     private float timeUntilNextWave;
     private void Start()
     {
+/*        waves = ConfigurationUtils.Waves;*/
+        timeBetweenWaves = ConfigurationUtils.TimeBetweenWaves;
         foreach (Wave wave in waves)
         {
             waveQueue.Enqueue(wave);
@@ -107,12 +110,5 @@ public class WaveManager : MonoBehaviour
             }
         }
         return closestTarget;
-    }
-    [System.Serializable]
-    public class Wave
-    {
-        public int enemyCount;
-        public float timeBetweenEnemies;
-        public string enemyName;
     }
 }

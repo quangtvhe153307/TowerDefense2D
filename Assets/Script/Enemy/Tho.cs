@@ -8,6 +8,9 @@ public class Tho : Enemy
     protected override void Start()
     {
         base.Start();
+        health = ConfigurationUtils.ThoHealth;
+        moveSpeed = ConfigurationUtils.ThoSpeed;
+        score = ConfigurationUtils.ThoScore;
     }
 
     // Update is called once per frame

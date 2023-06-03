@@ -8,6 +8,9 @@ public class Slime : Enemy
     protected override void Start()
     {
         base.Start();
+        health = ConfigurationUtils.NamHealth;
+        moveSpeed = ConfigurationUtils.NamSpeed;
+        score = ConfigurationUtils.NamScore;
     }
 
     // Update is called once per frame

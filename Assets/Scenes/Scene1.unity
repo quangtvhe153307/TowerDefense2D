@@ -2017,8 +2017,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemyCount: 10
-    timeBetweenEnemies: 2
+    timeBetweenEnemies: 3
     enemyName: Bo
+  - enemyCount: 10
+    timeBetweenEnemies: 3
+    enemyName: Ga
   timeBetweenWaves: 10
 --- !u!4 &946707440 stripped
 Transform:

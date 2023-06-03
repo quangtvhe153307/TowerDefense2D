@@ -8,6 +8,9 @@ public class Ga : Enemy
     protected override void Start()
     {
         base.Start();
+        health = ConfigurationUtils.GaHealth;
+        moveSpeed = ConfigurationUtils.GaSpeed;
+        score = ConfigurationUtils.GaScore;
     }
 
     // Update is called once per frame
