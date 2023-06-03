@@ -15,7 +15,7 @@ public class ScoreManager : MonoBehaviour
     {
         currentScore += enemyPoint;
         StatusScore.currentScore = currentScore;
-        //Debug.Log("Current Score: "+ currentScore );
+      //  Debug.Log("Current Score: "+ currentScore );
     }
 
     public static void SubtractScoreUpgradeTower(int upgradeCost)
@@ -25,8 +25,6 @@ public class ScoreManager : MonoBehaviour
             currentScore -= upgradeCost;
             StatusScore.currentScore = currentScore;
          //   Debug.Log("Current Score: "+ currentScore );
-            AudioManager.Play(AudioClipName.SubtractCoin);
-
         }
         else
         {
@@ -39,6 +37,5 @@ public class ScoreManager : MonoBehaviour
         currentScore += towerPrice;
         StatusScore.currentScore = currentScore;
        // Debug.Log("Current Score: "+ currentScore );
-        AudioManager.Play(AudioClipName.SubtractCoin);
     }
 }
