@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public abstract class Tower : MonoBehaviour, ITower
 {
-    protected int damage;
-    protected float cooldown;
-    protected float range;
+    public int damage;
+    public float cooldown;
+    public float range;
     protected Timer shootCoolDownTimer;
     protected GameObject _target;
     public float Range
@@ -15,7 +15,7 @@ public abstract class Tower : MonoBehaviour, ITower
         get { return range; }
     }
     [SerializeField]
-    protected int Price;
+    public int Price;
     [SerializeField]
     public int towerLevel;
     protected SelectTowerEvent selectEvent = new SelectTowerEvent();

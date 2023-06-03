@@ -10,6 +10,8 @@ public class StatusScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //  currentScore = ConfigurationUtils.defaultScore;
+         currentScore = 500;
         score = GetComponent<Text>();
     }
 
