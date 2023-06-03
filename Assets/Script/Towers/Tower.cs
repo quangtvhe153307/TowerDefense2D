@@ -1,31 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public abstract class Tower : MonoBehaviour
+public abstract class Tower : MonoBehaviour, ITower
 {
     [SerializeField]
     protected float cooldown;
     [SerializeField]
     protected float range;
-
     protected Timer shootCoolDownTimer;
     protected GameObject _target;
-
     public float Range
     {
         get { return range; }
     }
-
-    // Start is called before the first frame update
+    [SerializeField]
+    protected int Price;
+    [SerializeField]
+    protected int towerLevel;
+    protected SelectTowerEvent selectEvent = new SelectTowerEvent();
     protected virtual void Start()
     {
         shootCoolDownTimer= gameObject.AddComponent<Timer>();
         shootCoolDownTimer.Duration = cooldown;
         shootCoolDownTimer.Run();
+        transform.Find("SelectCircle").gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
     protected virtual void Update()
     {   
         if(_target != null)
@@ -50,11 +51,10 @@ public abstract class Tower : MonoBehaviour
             shootCoolDownTimer.Run();
         }
     }
-    /// <summary>
-    /// Check if target is in range of a tower
-    /// </summary>
-    /// <param name="target"></param>
-    /// <returns></returns>
+    public void AddSelectCPEventListener(UnityAction<GameObject, int> listener)
+    {
+        selectEvent.AddListener(listener);
+    }
     private bool CheckInRange(GameObject target)
     {
         if(Vector3.SqrMagnitude(transform.position - target.transform.position) <= range * range)
@@ -64,9 +64,16 @@ public abstract class Tower : MonoBehaviour
         return false;
     }
     protected abstract GameObject GetPooledBullet();
+    protected virtual void OnMouseDown(){
+        if (GameObject.Find("SelectCircle"))
+        {
+            GameObject.Find("SelectCircle").gameObject.SetActive(false);
+        }
+        transform.Find("SelectCircle").gameObject.SetActive(true);
+        selectEvent.Invoke(this.gameObject, towerLevel);
+    }
 
     protected virtual void RotateBullet(GameObject gameObject, Vector3 towerPosition ,Vector3 destination)
     {
-
     }
 }

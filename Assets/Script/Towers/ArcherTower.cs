@@ -4,31 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ArcherTower : Tower
 {
+    protected override void Start()
+    {
+        gameObject.name = $"ArcherLevel{towerLevel}";
+        SelectEventManager.AddSelectArcherTowerEventInvoker(this);
+        //cooldown = 0.1f;
+        //range = 7;
+        base.Start();
+    }
     protected override GameObject GetPooledBullet()
     {
         GameObject go = ObjectPool.SharedInstance.GetPooledObject("ArrowBullet");
         return go;
     }
-
-    protected override void Start()
-    {
-        //cooldown = 0.1f;
-        //range = 7;
-        base.Start();
-    }
-
-    protected override void Update()
-    {
-        base.Update();
-    }
-    /// <summary>
-    /// Rotate arrow to enemy's direction
-    /// </summary>
-    /// <param name="gameObject"></param>
-    /// <param name="destination"></param>
     protected override void RotateBullet(GameObject gameObject, Vector3 towerPosition,Vector3 destination)
     {   
         //new direction of arrow
