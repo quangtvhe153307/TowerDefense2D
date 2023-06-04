@@ -1,6 +1,7 @@
 using Assets.Script.Manager;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -16,6 +17,9 @@ public class WaveManager : MonoBehaviour
     {
         nextScreen.SetActive(false);
     }
+    public Transform spwanPoint;
+    public static int Count;
+    private int countWave = 0;
     private void Start()
     {
         /*        waves = ConfigurationUtils.Waves;*/
@@ -28,7 +32,19 @@ public class WaveManager : MonoBehaviour
         timeUntilNextWave = timeBetweenWaves;
         StartNextWave();
     }
-
+    public void Initialize()
+    {
+        EventManager.AddListener(EventName.StartNextWaveEvent, AddCount);
+        if(Count == 0)
+        {
+            Debug.Log("Start next wave" + countWave);
+            StartNextWave();
+        }
+    }
+    public static void AddCount(int i)
+    {
+        Count-= i;
+    }
     private void StartNextWave()
     {
         if (waveQueue.Count > 0)
@@ -54,10 +70,12 @@ public class WaveManager : MonoBehaviour
             int randomType = Random.Range(wave.enemyType[0]-1, wave.enemyType[1]);
             GameObject enemy = ObjectPool.SharedInstance.GetPooledObject("Enemy" + listEnemy[randomType]);
             enemy.SetActive(true);
-            enemy.transform.position = transform.position;
-            yield return new WaitForSeconds(wave.timeBetweenEnemies);
+            enemy.transform.position = new Vector2(transform.position.x,transform.position.y-3f);
+            transform.position = enemy.transform.position; 
         }
-
+        countWave++;
+        Count = wave.enemyCount;
+        transform.position = spwanPoint.position;
         timeUntilNextWave = timeBetweenWaves;
         yield return new WaitForSeconds(timeUntilNextWave);
         StartNextWave();

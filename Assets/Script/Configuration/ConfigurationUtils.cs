@@ -240,6 +240,10 @@ public static class ConfigurationUtils
     {
         get { return configurationData.defaultScore; }
     }
+    public static int HealthHouse
+    {
+        get { return configurationData.fullHealthHouse; }
+    }
     /// <summary>
     /// Initializes the configuration utils
     /// </summary>

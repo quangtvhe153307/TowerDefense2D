@@ -1,6 +1,8 @@
+using Assets.Script.Event;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : IntEventInvoker
 {
@@ -34,6 +36,8 @@ public class Enemy : IntEventInvoker
         unityEvents.Add(EventName.HouseAttackedEvent, new HouseAttackedEvent());
         EventManager.AddInvoker(EventName.HouseAttackedEvent, this);
 
+        unityEvents.Add(EventName.StartNextWaveEvent, new StartNextWaveEvent());
+        EventManager.AddInvoker(EventName.StartNextWaveEvent, this);
         //EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
     }
 
@@ -81,6 +85,7 @@ public class Enemy : IntEventInvoker
 
         //Invoke event when enemy death
         unityEvents[EventName.ScoreAddedEvent].Invoke(this.score);
+        unityEvents[EventName.StartNextWaveEvent].Invoke(1);
         AudioManager.Play(AudioClipName.Death);
     }
 
