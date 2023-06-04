@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 namespace Assets.Script.Event
 {
-    public class StartNextWaveEvent: UnityEvent<int>
+    public class EnemyDiedEvent: UnityEvent<int>
     {
     }
 }

@@ -36,9 +36,8 @@ public class Enemy : IntEventInvoker
         unityEvents.Add(EventName.HouseAttackedEvent, new HouseAttackedEvent());
         EventManager.AddInvoker(EventName.HouseAttackedEvent, this);
 
-        unityEvents.Add(EventName.StartNextWaveEvent, new StartNextWaveEvent());
-        EventManager.AddInvoker(EventName.StartNextWaveEvent, this);
-        //EventManager.AddListener(EventName.EnemyAttackedEvent, SubtractHealth);
+        unityEvents.Add(EventName.EnemyDiedEvent, new EnemyDiedEvent());
+        EventManager.AddInvoker(EventName.EnemyDiedEvent, this);
     }
 
     protected virtual void Update()
@@ -85,7 +84,7 @@ public class Enemy : IntEventInvoker
 
         //Invoke event when enemy death
         unityEvents[EventName.ScoreAddedEvent].Invoke(this.score);
-        unityEvents[EventName.StartNextWaveEvent].Invoke(1);
+        unityEvents[EventName.EnemyDiedEvent].Invoke(1);
         AudioManager.Play(AudioClipName.Death);
     }
 
@@ -96,6 +95,7 @@ public class Enemy : IntEventInvoker
             Debug.Log("Test House collision");
             //Invoke event when enemy attack house
             unityEvents[EventName.HouseAttackedEvent].Invoke(1);
+            unityEvents[EventName.EnemyDiedEvent].Invoke(1);
 
         }
     }
