@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class WaveManager : IntEventInvoker
 {
+    [SerializeField] private GameObject nextScreen;
+    [SerializeField] private GameObject overScreen;
     //store information of wave
     static string[] listEnemy = {"Bo","Ga","Nam","Slime","Tho"};
     public List<Wave> waves;
@@ -33,6 +35,10 @@ public class WaveManager : IntEventInvoker
     {
         get { return aliveEnemy; }
     }
+    private void Awake()
+    {
+        nextScreen.SetActive(false);
+    }
     private void Start()
     {
         totalWaveCount = waves.Count;
@@ -54,9 +60,9 @@ public class WaveManager : IntEventInvoker
     }
     private void Update()
     {
-        Debug.Log("currentWaveCount: " + currentWaveCount);
-        Debug.Log("totalWaveCount: "+totalWaveCount);
-        Debug.Log("aliveEnemy: "+aliveEnemy);
+        //Debug.Log("currentWaveCount: " + currentWaveCount);
+        //Debug.Log("totalWaveCount: "+totalWaveCount);
+        //Debug.Log("aliveEnemy: "+aliveEnemy);
     }
     public void StartNextWave()
     {
@@ -75,6 +81,8 @@ public class WaveManager : IntEventInvoker
         else
         {
             Debug.Log("No more wave");
+            if(!overScreen.active)
+            nextScreen.SetActive(true);
         }
     }
 

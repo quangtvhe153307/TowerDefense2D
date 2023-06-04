@@ -9,7 +9,14 @@ public class House : IntEventInvoker
     [SerializeField] GameObject healthText;
     public int currentHealth;
     public HealthBar healthBar; 
-    GameObject slider; 
+    GameObject slider;
+    //Scene game Over
+    [SerializeField] private GameObject overScreen;
+    
+    private void Awake()
+    {
+        overScreen.SetActive(false);
+    }
     StatusHealth statusHealth;
     void Start()
     {
@@ -38,6 +45,7 @@ public class House : IntEventInvoker
             Debug.Log("Game Over");
             // Invoke event game over here!
             Time.timeScale = 0;
+            overScreen.SetActive(true);
         }
          // Update status health
         if (statusHealth != null)
