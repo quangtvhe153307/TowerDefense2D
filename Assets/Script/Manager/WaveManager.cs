@@ -1,10 +1,11 @@
+using Assets.Script.Event;
 using Assets.Script.Manager;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class WaveManager : MonoBehaviour
+public class WaveManager : IntEventInvoker
 {
     //store information of wave
     static string[] listEnemy = {"Bo","Ga","Nam","Slime","Tho"};
@@ -34,6 +35,9 @@ public class WaveManager : MonoBehaviour
     }
     private void Start()
     {
+        totalWaveCount = waves.Count;
+        currentWaveCount = 0;
+
         timeBetweenWaves = ConfigurationUtils.TimeBetweenWaves;
         foreach (Wave wave in waves)
         {
@@ -42,11 +46,11 @@ public class WaveManager : MonoBehaviour
 
         main = this;
 
-        totalWaveCount = waves.Count;
-        currentWaveCount = 0;
-        StartNextWave();
-
         EventManager.AddListener(EventName.EnemyDiedEvent, EnemyDiedListener);
+        unityEvents.Add(EventName.NewWaveStartedEvent, new NewWaveStartedEvent());
+        EventManager.AddInvoker(EventName.NewWaveStartedEvent, this);
+
+        StartNextWave();
     }
     private void Update()
     {
@@ -64,6 +68,9 @@ public class WaveManager : MonoBehaviour
 
             aliveEnemy = currentWave.enemyCount;
             currentWaveCount++;
+
+            //invoke new wave event
+            unityEvents[EventName.NewWaveStartedEvent].Invoke(1);
         }
         else
         {
