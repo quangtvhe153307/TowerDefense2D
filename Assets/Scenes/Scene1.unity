@@ -11301,13 +11301,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemyCount: 10
-    timeBetweenEnemies: 5
+    timeBetweenEnemies: 2
     enemyType: 0100000002000000
   - enemyCount: 10
-    timeBetweenEnemies: 5
+    timeBetweenEnemies: 2
     enemyType: 0300000004000000
   timeBetweenWaves: 10
-  spwanPoint: {fileID: 1034469010}
 --- !u!1 &1802894059
 GameObject:
   m_ObjectHideFlags: 0

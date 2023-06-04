@@ -58,6 +58,7 @@ public abstract class Tower : MonoBehaviour, ITower
     }
     private bool CheckInRange(GameObject target)
     {
+        if (!target.activeInHierarchy) return false;
         if(Vector3.SqrMagnitude(transform.position - target.transform.position) <= range * range)
         {
             return true;
