@@ -11,6 +11,11 @@ public class WaveManager : MonoBehaviour
     private Queue<Wave> waveQueue = new Queue<Wave>();
     private Wave currentWave;
     private float timeUntilNextWave;
+    [SerializeField] private GameObject nextScreen;
+    private void Awake()
+    {
+        nextScreen.SetActive(false);
+    }
     private void Start()
     {
         /*        waves = ConfigurationUtils.Waves;*/
@@ -35,6 +40,8 @@ public class WaveManager : MonoBehaviour
         else
         {
             Debug.Log("No more wave");
+            Time.timeScale = 0;
+            nextScreen.SetActive(true);
         }
     }
 

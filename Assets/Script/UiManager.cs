@@ -5,7 +5,8 @@ public class UiManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject nextScreen;
-
+    [SerializeField] private GameObject overScreen;
+    private bool canPressEsc;
     private void Awake()
     {
         pauseScreen.SetActive(false);
@@ -15,13 +16,18 @@ public class UiManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        canPressEsc = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        //cant open pauseUI when overUI active
+        if (overScreen.active)
+        {
+            canPressEsc = false;
+        }
+        if (canPressEsc && Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseScreen.activeInHierarchy)
             {
@@ -79,6 +85,13 @@ public class UiManager : MonoBehaviour
         nextScreen.SetActive(status);
     }
 
+    public void RestartGame()
+    {
+        int idScene = PlayerPrefs.GetInt("Scene", 0);
+        SceneManager.LoadScene(idScene);
+        Time.timeScale = 1;
+    }
+
     public void NextGame()
     {
         SceneManager.LoadScene(2);
@@ -92,6 +105,7 @@ public class UiManager : MonoBehaviour
         //    GameObject objectToDisable = GameObject.FindWithTag("Player");
         //    objectToDisable.GetComponent<MovementController>().enabled = true;
         //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        overScreen.SetActive(false);
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
