@@ -9,5 +9,5 @@ public enum EventName
     //EnemyAttackedEvent,
     ScoreAddedEvent,
     HouseAttackedEvent,
-    StartNextWaveEvent
+    EnemyDiedEvent
 }
