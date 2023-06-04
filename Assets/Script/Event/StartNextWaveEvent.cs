@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine.Events;
 
-public enum EventName
+namespace Assets.Script.Event
 {
-    //EnemyAttackedEvent,
-    ScoreAddedEvent,
-    HouseAttackedEvent,
-    StartNextWaveEvent
+    public class StartNextWaveEvent: UnityEvent<int>
+    {
+    }
 }
