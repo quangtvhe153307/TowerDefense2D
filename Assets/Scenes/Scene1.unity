@@ -3575,11 +3575,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9052944735928123127, guid: fe5b4d9ee4b3a1f41a9a09c907acba94, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -859.05
+      value: -314
       objectReference: {fileID: 0}
     - target: {fileID: 9052944735928123127, guid: fe5b4d9ee4b3a1f41a9a09c907acba94, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 349.6
+      value: 124
       objectReference: {fileID: 0}
     - target: {fileID: 9052944736188596516, guid: fe5b4d9ee4b3a1f41a9a09c907acba94, type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -3595,11 +3595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9052944736440781077, guid: fe5b4d9ee4b3a1f41a9a09c907acba94, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -858.8
+      value: -315
       objectReference: {fileID: 0}
     - target: {fileID: 9052944736440781077, guid: fe5b4d9ee4b3a1f41a9a09c907acba94, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 401.98
+      value: 173
       objectReference: {fileID: 0}
     - target: {fileID: 9052944736537236136, guid: fe5b4d9ee4b3a1f41a9a09c907acba94, type: 3}
       propertyPath: m_Name
@@ -11368,13 +11368,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScreen: {fileID: 4172248727574038451}
+  overScreen: {fileID: 4172248728514472238}
   waves:
   - enemyCount: 10
     timeBetweenEnemies: 2
-    enemyType: 0100000002000000
-  - enemyCount: 10
-    timeBetweenEnemies: 2
-    enemyType: 0300000004000000
+    enemyType: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
   timeBetweenWaves: 10
 --- !u!1 &1802894059
 GameObject:
@@ -11897,8 +11895,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingLayerID: -1672298517
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &2025458961
 RectTransform:

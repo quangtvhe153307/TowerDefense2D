@@ -7,6 +7,7 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private GameObject nextScreen;
+    [SerializeField] private GameObject overScreen;
     //store information of wave
     static string[] listEnemy = {"Bo","Ga","Nam","Slime","Tho"};
     public List<Wave> waves;
@@ -73,6 +74,7 @@ public class WaveManager : MonoBehaviour
         else
         {
             Debug.Log("No more wave");
+            if(!overScreen.active)
             nextScreen.SetActive(true);
         }
     }

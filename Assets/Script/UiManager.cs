@@ -65,16 +65,11 @@ public class UiManager : MonoBehaviour
         if (status)
         {
             Time.timeScale = 0;
-
-            //GameObject objectToDisable = GameObject.FindWithTag("Player");
-            //objectToDisable.GetComponent<MovementController>().enabled = false;
         }
 
         else
         {
             Time.timeScale = 1;
-            //GameObject objectToDisable = GameObject.FindWithTag("Player");
-            //objectToDisable.GetComponent<MovementController>().enabled = true;
         }
 
     }
@@ -101,10 +96,6 @@ public class UiManager : MonoBehaviour
 
     public void Quit()
     {
-        //    Time.timeScale = 1;
-        //    GameObject objectToDisable = GameObject.FindWithTag("Player");
-        //    objectToDisable.GetComponent<MovementController>().enabled = true;
-        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         overScreen.SetActive(false);
         SceneManager.LoadScene(0);
         Time.timeScale = 1;

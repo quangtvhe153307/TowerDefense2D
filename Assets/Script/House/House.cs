@@ -12,6 +12,7 @@ public class House : IntEventInvoker
     GameObject slider;
     //Scene game Over
     [SerializeField] private GameObject overScreen;
+    
     private void Awake()
     {
         overScreen.SetActive(false);
