@@ -5,18 +5,26 @@ using UnityEngine.UI;
 
 public class House : IntEventInvoker
 {
-    [SerializeField] public int maxHealth;
+    public int maxHealth;
     [SerializeField] GameObject healthText;
     public int currentHealth;
     public HealthBar healthBar; 
     GameObject slider; 
+    StatusHealth statusHealth;
     void Start()
     {
+        maxHealth = ConfigurationUtils.HealthHouse;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         slider = GameObject.Find("HealthBar");
         DeactiveSliderHealthBar();
         EventManager.AddListener(EventName.HouseAttackedEvent, TakeDamage);
+
+        statusHealth = healthText.GetComponent<StatusHealth>();
+        if (statusHealth != null)
+        {
+            statusHealth.SetStatusHealth(this);
+        }
     }
 
     public void TakeDamage(int damage){
@@ -32,7 +40,6 @@ public class House : IntEventInvoker
             Time.timeScale = 0;
         }
          // Update status health
-        StatusHealth statusHealth = healthText.GetComponent<StatusHealth>();
         if (statusHealth != null)
         {
             statusHealth.SetStatusHealth(this);
