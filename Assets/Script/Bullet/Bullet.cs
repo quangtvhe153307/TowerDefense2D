@@ -22,7 +22,7 @@ public class Bullet : IntEventInvoker
     // Update is called once per frame
     protected virtual void Update()
     {
-        if(target != null)
+        if(target.activeInHierarchy)
         {
             targetPosition = target.transform.position;
         }
@@ -30,7 +30,7 @@ public class Bullet : IntEventInvoker
         if (targetPosition != null)
         {
             Vector3 direction = targetPosition - gameObject.transform.position;
-            if (target == null && Vector3.SqrMagnitude(direction) < 0.1)
+            if ((!target.activeInHierarchy || target == null) && Vector3.SqrMagnitude(direction) < 0.1)
             {
                 gameObject.SetActive(false);
             }

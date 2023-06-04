@@ -48,7 +48,7 @@ public class Enemy : IntEventInvoker
             changedDirectionTimes++;
             if (pathIndex >= PathFinding.main.path.Length)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
                 return;
             }
             else
@@ -79,9 +79,8 @@ public class Enemy : IntEventInvoker
 
     private void Death(){
         //Instantiate death prefab and play sound
-        //this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
         //Destroy(gameObject);
-        gameObject.SetActive(false);
 
         //Invoke event when enemy death
         unityEvents[EventName.ScoreAddedEvent].Invoke(this.score);

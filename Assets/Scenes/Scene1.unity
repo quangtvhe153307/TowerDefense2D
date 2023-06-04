@@ -11369,9 +11369,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScreen: {fileID: 4172248727574038451}
   waves:
-  - enemyCount: 1
-    timeBetweenEnemies: 1
+  - enemyCount: 10
+    timeBetweenEnemies: 2
     enemyType: 0100000002000000
+  - enemyCount: 10
+    timeBetweenEnemies: 2
+    enemyType: 0300000004000000
   timeBetweenWaves: 10
 --- !u!1 &1802894059
 GameObject:
