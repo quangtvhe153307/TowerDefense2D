@@ -29,17 +29,19 @@ public class WaveManager : MonoBehaviour
         if (waveQueue.Count > 0)
         {
             currentWave = waveQueue.Dequeue();
+            Debug.Log("Start next wave!");
             StartCoroutine(SpawnEnemies(currentWave));
         }
         else
         {
-            Debug.Log("No more waves!");
+            Debug.Log("No more wave");
         }
     }
 
     private IEnumerator SpawnEnemies(Wave wave)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
+
         for (int i = 0; i < wave.enemyCount; i++)
         {
             int randomType = Random.Range(wave.enemyType[0]-1, wave.enemyType[1]);
@@ -50,6 +52,8 @@ public class WaveManager : MonoBehaviour
         }
 
         timeUntilNextWave = timeBetweenWaves;
+        yield return new WaitForSeconds(timeUntilNextWave);
+        StartNextWave();
     }
     /// <summary>
     /// Get target for a specific tower
