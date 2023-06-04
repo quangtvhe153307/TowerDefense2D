@@ -316,6 +316,12 @@ public class ConfigurationData
     {
         get { return magicianBulletSpeed; }
     }
+    //Health of house
+    static int FullHealthHouse = 500;
+    public int fullHealthHouse
+    {
+        get { return FullHealthHouse; }
+    }
     public ConfigurationData()
     {
         // read and save configuration data from file
@@ -410,6 +416,7 @@ public class ConfigurationData
             PriceMagicianLv3 = int.Parse(values[50]);
             DamageMagicianLv3 = int.Parse(values[51]);
             DefaultScore = int.Parse(values[52]);
+            FullHealthHouse = int.Parse(values[53]);
         } catch (Exception ex) {
             Debug.Log(ex.Message);
         }
