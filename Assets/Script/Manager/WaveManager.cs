@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    [SerializeField] private GameObject nextScreen;
     //store information of wave
     static string[] listEnemy = {"Bo","Ga","Nam","Slime","Tho"};
     public List<Wave> waves;
@@ -32,6 +33,10 @@ public class WaveManager : MonoBehaviour
     {
         get { return aliveEnemy; }
     }
+    private void Awake()
+    {
+        nextScreen.SetActive(false);
+    }
     private void Start()
     {
         timeBetweenWaves = ConfigurationUtils.TimeBetweenWaves;
@@ -50,9 +55,9 @@ public class WaveManager : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("currentWaveCount: " + currentWaveCount);
-        Debug.Log("totalWaveCount: "+totalWaveCount);
-        Debug.Log("aliveEnemy: "+aliveEnemy);
+        //Debug.Log("currentWaveCount: " + currentWaveCount);
+        //Debug.Log("totalWaveCount: "+totalWaveCount);
+        //Debug.Log("aliveEnemy: "+aliveEnemy);
     }
     public void StartNextWave()
     {
@@ -68,7 +73,6 @@ public class WaveManager : MonoBehaviour
         else
         {
             Debug.Log("No more wave");
-            Time.timeScale = 0;
             nextScreen.SetActive(true);
         }
     }

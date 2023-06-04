@@ -80,7 +80,8 @@ public class Enemy : IntEventInvoker
     private void Death(){
         //Instantiate death prefab and play sound
         //this.gameObject.SetActive(false);
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
 
         //Invoke event when enemy death
         unityEvents[EventName.ScoreAddedEvent].Invoke(this.score);

@@ -23,7 +23,7 @@ public class UiManager : MonoBehaviour
     void Update()
     {
         //cant open pauseUI when overUI active
-        if (overScreen.active)
+        if (overScreen.active || nextScreen.active)
         {
             canPressEsc = false;
         }
