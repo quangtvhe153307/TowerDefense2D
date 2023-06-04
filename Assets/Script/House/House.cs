@@ -16,7 +16,6 @@ public class House : IntEventInvoker
     {
         overScreen.SetActive(false);
     }
-    GameObject slider; 
     StatusHealth statusHealth;
     void Start()
     {
