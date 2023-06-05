@@ -99,6 +99,11 @@ public class WaveManager : IntEventInvoker
         {
             int randomType = Random.Range(wave.enemyType[0] - 1, wave.enemyType[1]);
             GameObject enemy = ObjectPool.SharedInstance.GetPooledObject("Enemy" + listEnemy[randomType]);
+            Enemy enemy1 = enemy.GetComponent<Enemy>();
+            if(enemy1 != null)
+            {
+                enemy1.ResetToStartPosition();
+            }
             enemy.SetActive(true);
             enemy.transform.position = transform.position;
             yield return new WaitForSeconds(wave.timeBetweenEnemies);

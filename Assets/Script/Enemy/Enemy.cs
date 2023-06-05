@@ -99,5 +99,10 @@ public class Enemy : IntEventInvoker
 
         }
     }
-
+    public void ResetToStartPosition()
+    {
+        pathIndex = 0;
+        target = PathFinding.main.path[pathIndex];
+        changedDirectionTimes=0;
+    }
 }

@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HookGame.unity
     guid: 6d9b0b25b85bfce4baf757ac0ec748d2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene1.unity
     guid: 2910b53240e898b4192eb90ba2bd539f
   - enabled: 1
