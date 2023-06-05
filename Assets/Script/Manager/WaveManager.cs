@@ -81,8 +81,13 @@ public class WaveManager : IntEventInvoker
         else
         {
             Debug.Log("No more wave");
-            if(!overScreen.active)
-            nextScreen.SetActive(true);
+            if (!overScreen.active)
+            {
+                PlayerPrefs.SetInt("Scene", 2);
+                PlayerPrefs.Save();
+                nextScreen.SetActive(true);
+            }
+            
         }
     }
 
