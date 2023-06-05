@@ -32,7 +32,7 @@ public class UIHook : MonoBehaviour
 
     public void NewGame()
     {
-        PlayerPrefs.SetInt("Scene", 0);
+        PlayerPrefs.SetInt("Scene", 1);
         PlayerPrefs.Save();
         Exit();
     }
