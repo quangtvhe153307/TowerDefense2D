@@ -1,5 +1,5 @@
 boSpeed,boHealth,boScore,gaSpeed,gaHealth,gaScore,namSpeed,namHealth,namScore,slimeSpeed,slimeHealth,slimeScore,thoSpeed,thoHealth,thoScore,timeBetweenWaves,CooldownArcherLv1,RangeArcherLv1,PriceAcherLv1,DamageArcherLv1,CooldownKnightLv1,RangeKnightLv1,PriceKnightLv1,DamageKnightLv1,CooldownMagicianLv1,RangeMagicianLv1,PriceMagicianLv1,DamageMagicianLv1,CooldownArcherLv2,RangeArcherLv2,PriceAcherLv2,DamageArcherLv2,CooldownKnightLv2,RangeKnightLv2,PriceKnightLv2,DamageKnightLv2,CooldownMagicianLv2,RangeMagicianLv2,PriceMagicianLv2,DamageMagicianLv2,CooldownArcherLv3,RangeArcherLv3,PriceAcherLv3,DamageArcherLv3,CooldownKnightLv3,RangeKnightLv3,PriceKnightLv3,DamageKnightLv3,CooldownMagicianLv3,RangeMagicianLv3,PriceMagicianLv3,DamageMagicianLv3,DefaultScore,HealthHouse
-3,200,100,4,250,150,5,300,200,6,350,250,7,400,300,10,0.1,7,100,10,0.4,3,200,20,0.4,5,300,30,0.08,14,200,20,0.2,6,400,40,0.2,10,600,60,0.06,21,300,30,0.1,9,600,60,0.1,15,900,90,500,10
+3,200,100,4,250,150,5,300,200,6,350,250,7,400,300,10,0.1,7,40,10,0.4,3,40,20,0.4,5,40,30,0.08,14,60,20,0.2,6,60,40,0.2,10,60,60,0.06,21,120,30,0.1,9,120,60,0.1,15,120,90,500,10
 10,2,Bo,10,2,Ga,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ArrowSpeed,MagicianBulletSpeed,KnightBulletSpeed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 7,5,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
