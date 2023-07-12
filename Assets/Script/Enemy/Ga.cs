@@ -7,10 +7,10 @@ public class Ga : Enemy
     // Start is called before the first frame update
     protected override void Start()
     {
-        base.Start();
         health = ConfigurationUtils.GaHealth;
         moveSpeed = ConfigurationUtils.GaSpeed;
         score = ConfigurationUtils.GaScore;
+        base.Start();
     }
 
     // Update is called once per frame

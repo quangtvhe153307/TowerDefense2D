@@ -1,4 +1,5 @@
 using Assets.Script.Event;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,9 @@ public class Enemy : IntEventInvoker
     //total number of change direction while travel along the path
     private int changedDirectionTimes;
 
+    private GameObject healthBarObject;
+    private HealthBar healthBar;
+    private Timer attackedTimer;
     public int ChangedDirectionTimes
     {
         get { return changedDirectionTimes; }
@@ -38,6 +42,20 @@ public class Enemy : IntEventInvoker
 
         unityEvents.Add(EventName.EnemyDiedEvent, new EnemyDiedEvent());
         EventManager.AddInvoker(EventName.EnemyDiedEvent, this);
+
+        //get HealthBar
+        GameObject enemyHealthBar = this.gameObject.transform.GetChild(0).gameObject;
+        healthBarObject = enemyHealthBar.transform.GetChild(0).gameObject;
+        healthBar = healthBarObject.GetComponent<HealthBar>();
+        if(healthBar != null)
+        {
+            DeactiveSliderHealthBar();
+            healthBar.SetMaxHealth(health);
+
+            //initial timer
+            attackedTimer = gameObject.AddComponent<Timer>();
+            attackedTimer.Duration= 1;
+        }
     }
 
     protected virtual void Update()
@@ -57,6 +75,10 @@ public class Enemy : IntEventInvoker
             }
         }
 
+        if(attackedTimer.Finished)
+        {
+            DeactiveSliderHealthBar();
+        }
     }
 
     private void FixedUpdate()
@@ -71,8 +93,20 @@ public class Enemy : IntEventInvoker
     public void SubtractHealth(int points)
     {
         health -= points;
-        //Debug.Log("Subtract 10 points");
-        if(health <= 0){
+        //set health for health bar
+        healthBar.SetHealth(health);
+        healthBarObject.SetActive(true);
+
+        //reset count time if timer is running
+        if (attackedTimer.Running)
+        {
+            attackedTimer.ElapsedSeconds = 0;
+        } else
+        {
+            attackedTimer.Run();
+        }
+
+        if (health <= 0){
             this.Death();
         }
     }
@@ -104,5 +138,9 @@ public class Enemy : IntEventInvoker
         pathIndex = 0;
         target = PathFinding.main.path[pathIndex];
         changedDirectionTimes=0;
+    }
+    private void DeactiveSliderHealthBar()
+    {
+        healthBarObject.SetActive(false);
     }
 }
