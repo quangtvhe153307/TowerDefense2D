@@ -20,6 +20,7 @@ public class GameInitializer : MonoBehaviour
     {
         EventManager.Initialize();
         ConfigurationUtils.Initialize();
+        WaveConfiguration.Initialize();
         ScoreManager.Initialize();
     }
 
