@@ -32,7 +32,7 @@
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": ["Bo","Slime","Ga","Slime","Nam","Nam","Bo","Ga","Bo","Nam","Bo","Bo","Bo","Bo","Nam"],
+                        "enemies": ["Bo","Slime","Ga","Slime","Nam","Nam","Bo","Ga","Bo","Nam","Bo","Bo","Bo","Bo","Nam","Rong"],
                         "timeBetweenEnemies": 2
                     }
                 ],
@@ -58,7 +58,7 @@
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": ["Nam","Nam","Bo","Slime","Bo","Bo","Ga","Ga","Slime","Ga","Nam","Bo","Bo","Ga","Bo"],
+                        "enemies": ["Nam","Nam","Bo","Slime","Bo","Bo","Ga","Ga","Slime","Ga","Nam","Bo","Bo","Ga","Bo","Rong"],
                         "timeBetweenEnemies": 2
                     }
                 ],
@@ -79,7 +79,7 @@
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": ["Bo","Slime","Slime","Ga","Slime","Bo","Ga","Nam","Nam","Ga","Slime","Ga","Bo","Bo","Bo","Bo","Ga","Nam"],
+                        "enemies": ["Bo","Slime","Slime","Ga","Slime","Bo","Ga","Nam","Nam","Ga","Slime","Ga","Bo","Bo","Bo","Bo","Ga","Nam","Rong"],
                         "timeBetweenEnemies": 2
                     }
                 ],
@@ -105,7 +105,7 @@
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": ["Ga","Slime","Slime","Ga","Slime","Bo","Slime","Nam","Nam","Nam","Slime","Ga","Slime","Bo","Bo","Slime","Ga","Bo","Ga","Bo","Ga","Slime"],
+                        "enemies": ["Ga","Slime","Slime","Ga","Slime","Bo","Slime","Nam","Nam","Nam","Slime","Ga","Slime","Bo","Bo","Slime","Ga","Bo","Ga","Bo","Ga","Slime","Rong"],
                         "timeBetweenEnemies": 2
                     }
                 ],
@@ -126,7 +126,7 @@
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": ["Bo","Bo","Nam","Ga","Slime","Ga","Ga","Bo","Bo","Slime","Bo","Ga","Ga","Nam","Slime","Nam","Nam","Ga","Bo","Nam","Bo","Nam","Ga","Nam","Ga"],
+                        "enemies": ["Bo","Bo","Nam","Ga","Slime","Ga","Ga","Bo","Bo","Slime","Bo","Ga","Ga","Nam","Slime","Nam","Nam","Ga","Bo","Nam","Bo","Nam","Ga","Nam","Ga","Rong","Rong"],
                         "timeBetweenEnemies": 2
                     }
                 ],

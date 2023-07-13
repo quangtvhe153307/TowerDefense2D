@@ -100,7 +100,7 @@ public class WaveManager : IntEventInvoker
             //invoke new wave event
             unityEvents[EventName.NewWaveStartedEvent].Invoke(1);
         }
-        else
+        else if(waveQueue.Count <= 0 && aliveEnemy <=0)      
         {
             Debug.Log("No more wave");
             if (!overScreen.active)
