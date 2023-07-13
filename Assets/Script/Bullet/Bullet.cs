@@ -10,6 +10,7 @@ public class Bullet : IntEventInvoker
 
     protected GameObject target;
     private Vector3 targetPosition;
+    private bool TargetDied = true;
     #endregion
 
 
@@ -22,15 +23,18 @@ public class Bullet : IntEventInvoker
     // Update is called once per frame
     protected virtual void Update()
     {
-        if(target.activeInHierarchy)
+        if(target.activeInHierarchy && !TargetDied)
         {
             targetPosition = target.transform.position;
+        } else
+        {
+            TargetDied = true;
         }
 
         if (targetPosition != null)
         {
             Vector3 direction = targetPosition - gameObject.transform.position;
-            if ((!target.activeInHierarchy || target == null) && Vector3.SqrMagnitude(direction) < 0.1)
+            if (TargetDied && Vector3.SqrMagnitude(direction) < 0.1)
             {
                 gameObject.SetActive(false);
             }
@@ -57,7 +61,8 @@ public class Bullet : IntEventInvoker
     }
     public void SetTarget(GameObject target)
     {
-        this.target = target;
+        this.target = target; 
+        TargetDied = false;
     }
     public void SetDamage(int damage)
     {

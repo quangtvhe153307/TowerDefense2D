@@ -56,6 +56,8 @@ public class ObjectPool : MonoBehaviour
     //Boss Dragon
     [SerializeField]
     public GameObject bossDragon;
+    [SerializeField]
+    public int amountDragonToPool;
     private void Awake()
     {
         SharedInstance = this;
@@ -118,7 +120,7 @@ public class ObjectPool : MonoBehaviour
         }
 
         pooledEnemy = new List<GameObject>();
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < amountDragonToPool; i++)
         {
             tmp2 = Instantiate(bossDragon);
             tmp2.SetActive(false);

@@ -1360,6 +1360,7 @@ MonoBehaviour:
   enemySlime: {fileID: 102255111614822692, guid: 3dcce90c2158d0940b11238c3575815c, type: 3}
   amountSlimeEnemy: 10
   bossDragon: {fileID: 5974356069652245410, guid: b7e040381fa85b240a35e022b6788f29, type: 3}
+  amountDragonToPool: 2
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
