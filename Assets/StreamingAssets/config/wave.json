@@ -1,0 +1,155 @@
+{
+    "EasyLevel": {
+        "Level": "Easy",
+        "Screens": [
+            {
+                "ScreenNumber": 1,
+                "timeBetweenWaves": 20,
+                "Waves": [
+                    {
+                        "enemyCount": 10,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    },
+                    {
+                        "enemyCount": 10,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    }
+                ],
+                "listEnemies": [
+                    "Bo",
+                    "Ga",
+                    "Nam",
+                    "Slime",
+                    "Tho"
+                ]
+            },
+            {
+                "ScreenNumber": 2,
+                "timeBetweenWaves": 20,
+                "Waves": [
+                    {
+                        "enemyCount": 10,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    },
+                    {
+                        "enemyCount": 15,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    }
+                ],
+                "listEnemies": [
+                    "Bo",
+                    "Ga",
+                    "Nam",
+                    "Slime",
+                    "Tho"
+                ]
+            }
+        ]
+    },
+    "MediumLevel": {
+        "Level": "Medium",
+        "Screens": [
+            {
+                "ScreenNumber": 1,
+                "timeBetweenWaves": 14,
+                "Waves": [
+                    {
+                        "enemyCount": 10,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    },
+                    {
+                        "enemyCount": 15,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    }
+                ],
+                "listEnemies": [
+                    "Bo",
+                    "Ga",
+                    "Nam",
+                    "Slime",
+                    "Tho"
+                ]
+            },
+            {
+                "ScreenNumber": 2,
+                "timeBetweenWaves": 14,
+                "Waves": [
+                    {
+                        "enemyCount": 15,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    },
+                    {
+                        "enemyCount": 18,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    }
+                ],
+                "listEnemies": [
+                    "Bo",
+                    "Ga",
+                    "Nam",
+                    "Slime",
+                    "Tho"
+                ]
+            }
+        ]
+    },
+    "HardLevel": {
+        "Level": "Hard",
+        "Screens": [
+            {
+                "ScreenNumber": 1,
+                "timeBetweenWaves": 7,
+                "Waves": [
+                    {
+                        "enemyCount": 16,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    },
+                    {
+                        "enemyCount": 22,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    }
+                ],
+                "listEnemies": [
+                    "Bo",
+                    "Ga",
+                    "Nam",
+                    "Slime",
+                    "Tho"
+                ]
+            },
+            {
+                "ScreenNumber": 2,
+                "timeBetweenWaves": 7,
+                "Waves": [
+                    {
+                        "enemyCount": 20,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    },
+                    {
+                        "enemyCount": 25,
+                        "timeBetweenEnemies": 2,
+                        "enemyType": [1, 2, 3, 4]
+                    }
+                ],
+                "listEnemies": [
+                    "Bo",
+                    "Ga",
+                    "Nam",
+                    "Slime",
+                    "Tho"
+                ]
+            }
+        ]
+    }
+}
