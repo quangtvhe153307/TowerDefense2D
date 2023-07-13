@@ -7,10 +7,10 @@ public class Nam : Enemy
     // Start is called before the first frame update
     protected override void Start()
     {
+        base.Start();
         health = ConfigurationUtils.NamHealth;
         moveSpeed = ConfigurationUtils.NamSpeed;
         score = ConfigurationUtils.NamScore;
-        base.Start();
     }
 
     // Update is called once per frame

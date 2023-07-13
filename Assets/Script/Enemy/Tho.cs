@@ -7,10 +7,10 @@ public class Tho : Enemy
     // Start is called before the first frame update
     protected override void Start()
     {
+        base.Start();
         health = ConfigurationUtils.ThoHealth;
         moveSpeed = ConfigurationUtils.ThoSpeed;
         score = ConfigurationUtils.ThoScore;
-        base.Start();
     }
 
     // Update is called once per frame

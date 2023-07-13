@@ -19,13 +19,7 @@ public class Timer : MonoBehaviour
     #endregion
 
     #region Properties
-    /// <summary>
-    /// Sets the duration of the timer for reset health bar activation purpose
-    /// </summary>
-    public float ElapsedSeconds
-    {
-        get; set;
-    }
+
     /// <summary>
     /// Sets the duration of the timer
     /// The duration can only be set if the timer isn't currently running
