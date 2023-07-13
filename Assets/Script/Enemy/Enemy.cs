@@ -7,13 +7,13 @@ using UnityEngine.Events;
 public class Enemy : IntEventInvoker
 {
     [Header("References")]
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] protected Rigidbody2D rb;
     [Header("Attributes")]
     [SerializeField] public float moveSpeed = 2f;
     [SerializeField] public int health;
     [SerializeField] public int score;
 
-    private Transform target;
+    protected Transform target;
     private int pathIndex;
 
     //total number of change direction while travel along the path
@@ -59,7 +59,7 @@ public class Enemy : IntEventInvoker
 
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         Vector2 direction = (target.position - transform.position).normalized;
         rb.velocity = direction * moveSpeed;
