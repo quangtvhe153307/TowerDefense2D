@@ -54,9 +54,6 @@ public class ObjectPool : MonoBehaviour
     [SerializeField]
     public int amountSlimeEnemy;
 
-    //Boss Dragon
-    [SerializeField]
-    public GameObject bossDragon;
     private void Awake()
     {
         SharedInstance = this;
@@ -109,16 +106,6 @@ public class ObjectPool : MonoBehaviour
             pooledEnemy.Add(tmp2);
         }
         pooledObjectDictionary.Add("EnemySlime", pooledEnemy);
-
-        pooledEnemy = new List<GameObject>();
-        for (int i = 0; i < 1; i++)
-        {
-            tmp2 = Instantiate(bossDragon);
-            tmp2.SetActive(false);
-            pooledEnemy.Add(tmp2);
-        }
-        pooledObjectDictionary.Add("BossDragon", pooledEnemy);
-
         List<GameObject> pooledGreenBullets = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < amountGreenBulletToPool; i++)
