@@ -3766,6 +3766,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4662657044746162274, guid: fe5b4d9ee4b3a1f41a9a09c907acba94, type: 3}
+      propertyPath: houseGameObject
+      value: 
+      objectReference: {fileID: 8790670252796290962}
     - target: {fileID: 4941423004923371825, guid: fe5b4d9ee4b3a1f41a9a09c907acba94, type: 3}
       propertyPath: houseGameObject
       value: 

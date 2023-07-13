@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class UIHook : MonoBehaviour
 {
     [SerializeField] private GameObject continueObj;
+    public GameObject audioSettingObject;
     // Start is called before the first frame update
     void Start()
     {
         checkUiContinue();
+        GameObject.Find("AudioPopup").SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class UIHook : MonoBehaviour
         PlayerPrefs.SetInt("Scene", 1);
         PlayerPrefs.Save();
         Exit();
+        Debug.Log("Save");
     }
     public void ContinueGame()
     {
@@ -51,10 +54,14 @@ public class UIHook : MonoBehaviour
         Invoke("ExitDelayed", 2f);
     }
 
+    public void Audio()
+    {
+        audioSettingObject.SetActive(true);
+        GameObject.Find("Canvas").SetActive(false);
+    }
+
     private void ExitDelayed()
     {
-        
-            SceneManager.LoadScene(1);
-
+        SceneManager.LoadScene(1);
     }
 }
