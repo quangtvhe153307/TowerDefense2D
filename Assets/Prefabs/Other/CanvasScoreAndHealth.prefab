@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 9052944735652145848}
   - component: {fileID: 9052944735652145850}
   - component: {fileID: 9052944735652145851}
-  - component: {fileID: 4662657044746162274}
+  - component: {fileID: 4941423004923371825}
   m_Layer: 5
   m_Name: Text_Health
   m_TagString: Untagged
@@ -157,7 +157,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: C/M
---- !u!114 &4662657044746162274
+--- !u!114 &4941423004923371825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

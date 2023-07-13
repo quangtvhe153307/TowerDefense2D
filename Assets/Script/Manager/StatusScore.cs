@@ -11,7 +11,7 @@ public class StatusScore : MonoBehaviour
     void Start()
     {
         currentScore = ConfigurationUtils.DefaultScore;
-        // currentScore = 500;
+         currentScore = 500;
         score = GetComponent<Text>();
     }
 
