@@ -6,6 +6,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject nextScreen;
     [SerializeField] private GameObject overScreen;
+    public GameObject popupObject;
+    public GameObject menuObject;
     private bool canPressEsc;
     private void Awake()
     {
@@ -101,7 +103,9 @@ public class UiManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    
-
-
+    public void AudioPopup()
+    {
+        popupObject.SetActive(true);
+        menuObject.SetActive(false);
+    }
 }
