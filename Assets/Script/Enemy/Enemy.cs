@@ -16,7 +16,7 @@ public class Enemy : IntEventInvoker
 
     protected Transform target;
     private int pathIndex;
-
+    protected int maxHealth;
     //total number of change direction while travel along the path
     private int changedDirectionTimes;
 
@@ -138,6 +138,11 @@ public class Enemy : IntEventInvoker
         pathIndex = 0;
         target = PathFinding.main.path[pathIndex];
         changedDirectionTimes=0;
+        health = maxHealth;
+        if(healthBar != null)
+        {
+            healthBar.SetHealth(maxHealth);
+        }
     }
     private void DeactiveSliderHealthBar()
     {

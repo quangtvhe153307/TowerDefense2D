@@ -100,7 +100,7 @@ public class WaveManager : IntEventInvoker
             //invoke new wave event
             unityEvents[EventName.NewWaveStartedEvent].Invoke(1);
         }
-        else if(waveQueue.Count <= 0 && aliveEnemy <=0)      
+        else   
         {
             Debug.Log("No more wave");
             if (!overScreen.active)
@@ -132,8 +132,10 @@ public class WaveManager : IntEventInvoker
     }
     public void EnemyDiedListener(int number)
     {
+        Debug.Log(aliveEnemy);
         aliveEnemy--;
-        if(aliveEnemy == 0)
+        Debug.Log("after remove: "+ aliveEnemy);
+        if (aliveEnemy == 0)
         {
             StartNextWave();
         }

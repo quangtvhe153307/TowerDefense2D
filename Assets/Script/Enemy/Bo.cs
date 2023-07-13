@@ -8,6 +8,7 @@ public class Bo : Enemy
     protected override void Start()
     {
         health = ConfigurationUtils.BoHealth;
+        maxHealth = health;
         moveSpeed = ConfigurationUtils.BoSpeed;
         score = ConfigurationUtils.BoScore;
         base.Start();

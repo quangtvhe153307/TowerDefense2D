@@ -8,6 +8,7 @@ public class Nam : Enemy
     protected override void Start()
     {
         health = ConfigurationUtils.NamHealth;
+        maxHealth = health;
         moveSpeed = ConfigurationUtils.NamSpeed;
         score = ConfigurationUtils.NamScore;
         base.Start();

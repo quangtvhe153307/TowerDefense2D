@@ -8,6 +8,7 @@ public class Ga : Enemy
     protected override void Start()
     {
         health = ConfigurationUtils.GaHealth;
+        maxHealth = health;
         moveSpeed = ConfigurationUtils.GaSpeed;
         score = ConfigurationUtils.GaScore;
         base.Start();

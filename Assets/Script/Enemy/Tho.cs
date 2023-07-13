@@ -8,6 +8,7 @@ public class Tho : Enemy
     protected override void Start()
     {
         health = ConfigurationUtils.ThoHealth;
+        maxHealth = health;
         moveSpeed = ConfigurationUtils.ThoSpeed;
         score = ConfigurationUtils.ThoScore;
         base.Start();
