@@ -105,12 +105,7 @@ public class UiManager : MonoBehaviour
 
     public void AudioPopup()
     {
-        // Viet Logic o day
         popupObject.SetActive(true);
         menuObject.SetActive(false);
     }
-
-    
-
-
 }

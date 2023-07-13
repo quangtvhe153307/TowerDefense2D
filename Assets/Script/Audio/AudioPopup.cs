@@ -19,8 +19,4 @@ public class AudioPopup : MonoBehaviour
         popupObject.SetActive(false);
         menuGameObject.SetActive(true);
     }
-
-
-
-
 }
