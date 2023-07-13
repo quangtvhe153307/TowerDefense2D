@@ -6,6 +6,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject nextScreen;
     [SerializeField] private GameObject overScreen;
+    public GameObject popupObject;
+    public GameObject menuObject;
     private bool canPressEsc;
     private void Awake()
     {
@@ -99,6 +101,13 @@ public class UiManager : MonoBehaviour
         overScreen.SetActive(false);
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
+    }
+
+    public void AudioPopup()
+    {
+        // Viet Logic o day
+        popupObject.SetActive(true);
+        menuObject.SetActive(false);
     }
 
     

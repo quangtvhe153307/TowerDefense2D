@@ -5,17 +5,22 @@ using UnityEngine.UI;
 
 public class AudioPopup : MonoBehaviour
 {
+    public Button btnSaveVolume;
+    public GameObject menuGameObject;
+    public GameObject popupObject;
+    void Start()
+    {
 
+        btnSaveVolume.onClick.AddListener(ClosePopup);
+    }
 
     public void ClosePopup()
     {
-        // Save Data
-        Debug.Log("Save");
-
-        GameObject.Find("AudioPopup").SetActive(false);
+        popupObject.SetActive(false);
+        menuGameObject.SetActive(true);
     }
 
 
-    
-    
+
+
 }
