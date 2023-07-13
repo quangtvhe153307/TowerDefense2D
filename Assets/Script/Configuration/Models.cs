@@ -23,6 +23,6 @@ public class SceenConfig
 [System.Serializable]
 public class WaveDetail
 {
-    public int[] enemies;
+    public string[] enemies;
     public float timeBetweenEnemies;
 }

@@ -1352,6 +1352,7 @@ MonoBehaviour:
   amountNamEnemy: 10
   enemySlime: {fileID: 102255111614822692, guid: 3dcce90c2158d0940b11238c3575815c, type: 3}
   amountSlimeEnemy: 10
+  bossDragon: {fileID: 5974356069652245410, guid: b7e040381fa85b240a35e022b6788f29, type: 3}
 --- !u!1 &534499510
 GameObject:
   m_ObjectHideFlags: 0
@@ -11782,14 +11783,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScreen: {fileID: 4172248727574038451}
   overScreen: {fileID: 4172248728514472238}
-  waves:
-  - enemyCount: 10
-    timeBetweenEnemies: 2
-    enemyType: 0100000002000000
-  - enemyCount: 10
-    timeBetweenEnemies: 2
-    enemyType: 0300000004000000
+  waves: []
   timeBetweenWaves: 5
+  _config:
+    Level: 
+    Screens: []
 --- !u!1 &1802894059
 GameObject:
   m_ObjectHideFlags: 0
