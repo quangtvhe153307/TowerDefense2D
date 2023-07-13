@@ -7,11 +7,11 @@
                 "timeBetweenWaves": 20,
                 "Waves": [
                     {
-                        "enemies": [3,1,4,4,2,4,4,3,1,4],
+                        "enemies": ["Nam","Bo","Slime","Slime","Ga","Slime","Slime","Nam","Bo","Slime"],
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": [3,4,4,1,1,3,2,4,3,4],
+                        "enemies": ["Nam","Slime","Slime","Bo","Bo","Nam","Ga","Slime","Nam","Slime"],
                         "timeBetweenEnemies": 2
                     }
                 ],
@@ -28,11 +28,11 @@
                 "timeBetweenWaves": 20,
                 "Waves": [
                     {
-                        "enemies": [2,3,2,4,3,1,2,1,3,4],
+                        "enemies": ["Ga","Nam","Ga","Slime","Nam","Bo","Ga","Bo","Nam","Slime"],
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": [1,4,2,4,3,3,1,2,1,3,1,1,1,1,3],
+                        "enemies": ["Bo","Slime","Ga","Slime","Nam","Nam","Bo","Ga","Bo","Nam","Bo","Bo","Bo","Bo","Nam"],
                         "timeBetweenEnemies": 2
                     }
                 ],
@@ -54,11 +54,11 @@
                 "timeBetweenWaves": 14,
                 "Waves": [
                     {
-                        "enemies": [1,1,1,4,1,3,1,3,3,2],
+                        "enemies": ["Bo","Bo","Bo","Slime","Bo","Nam","Bo","Nam","Nam","Ga"],
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": [3,3,1,4,1,1,2,2,4,2,3,1,1,2,1],
+                        "enemies": ["Nam","Nam","Bo","Slime","Bo","Bo","Ga","Ga","Slime","Ga","Nam","Bo","Bo","Ga","Bo"],
                         "timeBetweenEnemies": 2
                     }
                 ],
@@ -75,11 +75,11 @@
                 "timeBetweenWaves": 14,
                 "Waves": [
                     {
-                        "enemies": [2,4,2,3,1,3,3,1,1,4,3,1,3,1,2],
+                        "enemies": ["Ga","Slime","Ga","Nam","Bo","Nam","Nam","Bo","Bo","Slime","Nam","Bo","Nam","Bo","Ga"],
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": [1,4,4,2,4,1,2,3,3,2,4,2,1,1,1,1,2,3],
+                        "enemies": ["Bo","Slime","Slime","Ga","Slime","Bo","Ga","Nam","Nam","Ga","Slime","Ga","Bo","Bo","Bo","Bo","Ga","Nam"],
                         "timeBetweenEnemies": 2
                     }
                 ],
@@ -101,11 +101,11 @@
                 "timeBetweenWaves": 7,
                 "Waves": [
                     {
-                        "enemies": [2,2,2,2,1,2,3,2,2,4,3,1,1,1,2,1],
+                        "enemies": ["Ga","Ga","Ga","Ga","Bo","Ga","Nam","Ga","Ga","Slime","Nam","Bo","Bo","Bo","Ga","Bo"],
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": [2,4,4,2,4,1,4,3,3,3,4,2,4,1,1,4,2,1,2,1,2,4],
+                        "enemies": ["Ga","Slime","Slime","Ga","Slime","Bo","Slime","Nam","Nam","Nam","Slime","Ga","Slime","Bo","Bo","Slime","Ga","Bo","Ga","Bo","Ga","Slime"],
                         "timeBetweenEnemies": 2
                     }
                 ],
@@ -122,11 +122,11 @@
                 "timeBetweenWaves": 7,
                 "Waves": [
                     {
-                        "enemies": [2,1,1,4,2,1,4,4,4,2,4,2,4,1,4,4,3,2,3,1],
+                        "enemies": ["Ga","Bo","Bo","Slime","Ga","Bo","Slime","Slime","Slime","Ga","Slime","Ga","Slime","Bo","Slime","Slime","Nam","Ga","Nam","Bo"],
                         "timeBetweenEnemies": 2
                     },
                     {
-                        "enemies": [1,1,3,2,4,2,2,1,1,4,1,2,2,3,4,3,3,2,1,3,1,3,2,3,2],
+                        "enemies": ["Bo","Bo","Nam","Ga","Slime","Ga","Ga","Bo","Bo","Slime","Bo","Ga","Ga","Nam","Slime","Nam","Nam","Ga","Bo","Nam","Bo","Nam","Ga","Nam","Ga"],
                         "timeBetweenEnemies": 2
                     }
                 ],

@@ -3,6 +3,7 @@ using Assets.Script.Manager;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class WaveManager : IntEventInvoker
@@ -13,13 +14,14 @@ public class WaveManager : IntEventInvoker
     static string[] listEnemy = {"Bo","Ga","Nam","Slime","Tho"};
     public List<Wave> waves;
     public float timeBetweenWaves;
-    private Queue<Wave> waveQueue = new Queue<Wave>();
-    private Wave currentWave;
+    private Queue<WaveDetail> waveQueue = new Queue<WaveDetail>();
+    private WaveDetail currentWave;
 
     //store state of wave game
     private int currentWaveCount;
     private int totalWaveCount;
     private int aliveEnemy;
+    public LevelConfig _config;
     //properties for get wave state information
 
     public static WaveManager main;
@@ -35,17 +37,36 @@ public class WaveManager : IntEventInvoker
     {
         get { return aliveEnemy; }
     }
+    public LevelConfig config
+    {
+        get { return _config; }
+    }
+
     private void Awake()
     {
         nextScreen.SetActive(false);
     }
     private void Start()
     {
+        if (PlayerPrefs.GetInt("Difficulty", 1) == 1)
+        {
+            _config = WaveConfiguration.config.EasyLevel;
+        }
+        else if (PlayerPrefs.GetInt("Difficulty", 1) == 2)
+        {
+            _config = WaveConfiguration.config.MediumLevel;
+        }
+        else
+        {
+            _config = WaveConfiguration.config.HardLevel;
+        }
+
         totalWaveCount = waves.Count;
         currentWaveCount = 0;
 
         timeBetweenWaves = ConfigurationUtils.TimeBetweenWaves;
-        foreach (Wave wave in waves)
+        int idScene = PlayerPrefs.GetInt("Scene", 0);
+        foreach (WaveDetail wave in config.Screens[idScene].Waves)
         {
             waveQueue.Enqueue(wave);
         }
@@ -72,7 +93,7 @@ public class WaveManager : IntEventInvoker
             Debug.Log("Start next wave!");
             StartCoroutine(SpawnEnemies(currentWave));
 
-            aliveEnemy = currentWave.enemyCount;
+            aliveEnemy = currentWave.enemies.Length;
             currentWaveCount++;
 
             //invoke new wave event
@@ -91,14 +112,13 @@ public class WaveManager : IntEventInvoker
         }
     }
 
-    private IEnumerator SpawnEnemies(Wave wave)
+    private IEnumerator SpawnEnemies(WaveDetail wave)
     {
         yield return new WaitForSeconds(10f);
 
-        for (int i = 0; i < wave.enemyCount; i++)
-        {
-            int randomType = Random.Range(wave.enemyType[0] - 1, wave.enemyType[1]);
-            GameObject enemy = ObjectPool.SharedInstance.GetPooledObject("Enemy" + listEnemy[randomType]);
+        for (int i = 0; i < wave.enemies.Length; i++)
+        {          
+            GameObject enemy = ObjectPool.SharedInstance.GetPooledObject("Enemy" + wave.enemies[i]);
             Enemy enemy1 = enemy.GetComponent<Enemy>();
             if(enemy1 != null)
             {

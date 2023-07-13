@@ -13,13 +13,13 @@ public class UIHook : MonoBehaviour
     void Start()
     {
         checkUiContinue();
-   //     GameObject.Find("AudioPopup").SetActive(false);
+        //     GameObject.Find("AudioPopup").SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void checkUiContinue()
     {
@@ -27,7 +27,8 @@ public class UIHook : MonoBehaviour
         if (idScene != 0)
         {
             continueObj.SetActive(true);
-        }else continueObj.SetActive(false);
+        }
+        else continueObj.SetActive(false);
     }
     public void QuitGame()
     {
@@ -45,7 +46,7 @@ public class UIHook : MonoBehaviour
     {
         int idScene = PlayerPrefs.GetInt("Scene", 0);
         SceneManager.LoadScene(idScene);
-        Exit();
+        //Exit();
     }
 
     public void Exit() { Invoke("CrossfadeDelayed", 0.5f); }
@@ -64,6 +65,25 @@ public class UIHook : MonoBehaviour
 
     private void ExitDelayed()
     {
+        SceneManager.LoadScene(3);
+    }
+
+    public void EasyGame()
+    {
+        PlayerPrefs.SetInt("Difficulty", 1);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(1);
+    }
+    public void MediumGame()
+    {
+        PlayerPrefs.SetInt("Difficulty", 2);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(1);
+    }
+    public void HardGame()
+    {
+        PlayerPrefs.SetInt("Difficulty", 3);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(1);
     }
 }

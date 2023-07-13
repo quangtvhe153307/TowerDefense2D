@@ -9,8 +9,5 @@ namespace Assets.Script.Manager
     [System.Serializable]
     public class Wave
     {
-        public int enemyCount;
-        public float timeBetweenEnemies;
-        public int[] enemyType;
     }
 }
