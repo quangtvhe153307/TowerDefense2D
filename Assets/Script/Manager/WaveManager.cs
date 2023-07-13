@@ -1,5 +1,6 @@
 using Assets.Script.Event;
 using Assets.Script.Manager;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +67,7 @@ public class WaveManager : IntEventInvoker
 
         timeBetweenWaves = ConfigurationUtils.TimeBetweenWaves;
         int idScene = PlayerPrefs.GetInt("Scene", 0);
-        foreach (WaveDetail wave in config.Screens[idScene].Waves)
+        foreach (WaveDetail wave in config.Screens[idScene-1].Waves)
         {
             waveQueue.Enqueue(wave);
         }
