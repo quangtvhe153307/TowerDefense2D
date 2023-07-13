@@ -17,13 +17,12 @@ public class SceenConfig
 {
     public int ScreenNumber;
     public float timeBetweenWaves;
-    public List<Wave> Waves;
+    public List<WaveDetail> Waves;
     public List<string> listEnemies;
 }
 [System.Serializable]
-public class Wave
+public class WaveDetail
 {
-    public int enemyCount;
+    public int[] enemies;
     public float timeBetweenEnemies;
-    public int[] enemyType;
 }

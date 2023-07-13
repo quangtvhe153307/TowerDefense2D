@@ -15,5 +15,6 @@ public static class WaveConfiguration
         string json = File.ReadAllText(ConfigPath);
 
         config = JsonUtility.FromJson<WaveConfig>(json);
+        Debug.Log(config.EasyLevel.Screens[0].Waves[0].enemies[1]);
     }
 }
