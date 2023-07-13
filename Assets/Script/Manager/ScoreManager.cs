@@ -12,7 +12,7 @@ public static class ScoreManager
         currentScore = ConfigurationUtils.DefaultScore;
          EventManager.AddListener(EventName.ScoreAddedEvent, AddScoreKillEnemy);
        //  currentScore = ConfigurationUtils.defaultScore;
-       //  currentScore = 500;
+         currentScore = 500;
     }
 
     public static void AddScoreKillEnemy(int enemyPoint)
