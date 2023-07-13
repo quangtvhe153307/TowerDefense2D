@@ -109,18 +109,6 @@ public class WaveManager : IntEventInvoker
             yield return new WaitForSeconds(wave.timeBetweenEnemies);
         }
     }
-    private IEnumerator SpawnBoss()
-    {
-        yield return new WaitForSeconds(10f);
-        GameObject boss = ObjectPool.SharedInstance.GetPooledObject("BossDragon");
-        Enemy enemy1 = boss.GetComponent<Enemy>();
-        if (enemy1 != null)
-        {
-            enemy1.ResetToStartPosition();
-        }
-        boss.SetActive(true);
-        boss.transform.position = transform.position;
-    }
     public void EnemyDiedListener(int number)
     {
         aliveEnemy--;
