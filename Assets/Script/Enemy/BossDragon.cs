@@ -27,7 +27,7 @@ public class BossDragon : Enemy
         base.FixedUpdate();
         Vector2 direction2 = (base.target.position - transform.position).normalized;
         float angle = Vector2.Angle(Vector2.right, direction2);
-        Debug.Log(angle);
+        //Debug.Log(angle);
         if (89 <= angle && angle <= 91 && rb.velocity.y>0) {
             animator.Play("RongBayDocLen");
         }

@@ -1350,15 +1350,15 @@ MonoBehaviour:
   arrowToPool: {fileID: 1724516947869722542, guid: fd52e0a51eedd89498c8822ab0ba7880, type: 3}
   amountArrowToPool: 100
   enemyBo: {fileID: 2705668272605063100, guid: 628173e88634ffe4dba0068a25430756, type: 3}
-  amountBoEnemy: 10
+  amountBoEnemy: 20
   enemyGa: {fileID: 6035812634653664760, guid: 7dcacbadf339164409af0dda103c3ddd, type: 3}
-  amountGaEnemy: 10
+  amountGaEnemy: 20
   enemyTho: {fileID: 6213385148066220133, guid: 39bda501199fd1742878a8164edfff60, type: 3}
-  amountThoEnemy: 10
+  amountThoEnemy: 20
   enemyNam: {fileID: 702748021913537014, guid: b3129e42e80a6f543ac1cb8612ccc550, type: 3}
-  amountNamEnemy: 10
+  amountNamEnemy: 20
   enemySlime: {fileID: 102255111614822692, guid: 3dcce90c2158d0940b11238c3575815c, type: 3}
-  amountSlimeEnemy: 10
+  amountSlimeEnemy: 20
   bossDragon: {fileID: 5974356069652245410, guid: b7e040381fa85b240a35e022b6788f29, type: 3}
   amountDragonToPool: 2
 --- !u!114 &519420034
@@ -2434,8 +2434,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScreen: {fileID: 5111026607889814085}
   overScreen: {fileID: 5111026606682012888}
-  waves: []
-  timeBetweenWaves: 5
   _config:
     Level: 
     Screens: []

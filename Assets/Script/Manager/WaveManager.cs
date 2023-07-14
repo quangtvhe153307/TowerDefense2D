@@ -12,9 +12,9 @@ public class WaveManager : IntEventInvoker
     [SerializeField] private GameObject nextScreen;
     [SerializeField] private GameObject overScreen;
     //store information of wave
-    static string[] listEnemy = {"Bo","Ga","Nam","Slime","Tho"};
-    public List<Wave> waves;
-    public float timeBetweenWaves;
+    //static string[] listEnemy = {"Bo","Ga","Nam","Slime","Tho"};
+    //private List<Wave> waves;
+    private float timeBetweenWaves;
     private Queue<WaveDetail> waveQueue = new Queue<WaveDetail>();
     private WaveDetail currentWave;
 
@@ -62,8 +62,6 @@ public class WaveManager : IntEventInvoker
             _config = WaveConfiguration.config.HardLevel;
         }
 
-        totalWaveCount = waves.Count;
-        currentWaveCount = 0;
 
         timeBetweenWaves = ConfigurationUtils.TimeBetweenWaves;
         int idScene = PlayerPrefs.GetInt("Scene", 0);
@@ -73,7 +71,8 @@ public class WaveManager : IntEventInvoker
         }
 
         main = this;
-
+        totalWaveCount = waveQueue.Count;
+        currentWaveCount = 0;
         EventManager.AddListener(EventName.EnemyDiedEvent, EnemyDiedListener);
         unityEvents.Add(EventName.NewWaveStartedEvent, new NewWaveStartedEvent());
         EventManager.AddInvoker(EventName.NewWaveStartedEvent, this);
@@ -96,7 +95,7 @@ public class WaveManager : IntEventInvoker
 
             aliveEnemy = currentWave.enemies.Length;
             currentWaveCount++;
-
+            Debug.Log("number of enemies: " + aliveEnemy);
             //invoke new wave event
             unityEvents[EventName.NewWaveStartedEvent].Invoke(1);
         }
