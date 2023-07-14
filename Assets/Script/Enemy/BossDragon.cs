@@ -9,10 +9,10 @@ public class BossDragon : Enemy
     // Start is called before the first frame update
     protected override void Start()
     {
-        health = 500;
+        health = ConfigurationUtils.DragonHealth;
         maxHealth = health;
-        moveSpeed = 2;
-        score = 500;
+        moveSpeed = ConfigurationUtils.DragonSpeed;
+        score = ConfigurationUtils.DragonScore;
         animator = GetComponent<Animator>();
         base.Start();
     }

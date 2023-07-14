@@ -29,9 +29,13 @@ public class ConfigurationData
     static float ThomoveSpeed = 2f;
     static int ThohealthEnemy = 100;
     static int ThoscoreEnemy = 100;
+    //default value of boss
+    static float DragonmoveSpeed = 2f;
+    static int DragonhealthEnemy = 100;
+    static int DragonscoreEnemy = 100;
     //default value of tower
     //default wave enemy
-/*    static List<Wave> waves;*/
+    /*    static List<Wave> waves;*/
     static float timeBetweenWaves = 10f;
     //default object pooling count
 
@@ -101,10 +105,22 @@ public class ConfigurationData
     {
         get { return ThoscoreEnemy; }
     }
-/*    public List<Wave> Waves
+    public float dragonSpeed
     {
-        get { return waves; }
-    }*/
+        get { return DragonmoveSpeed; }
+    }
+    public int dragonHealth
+    {
+        get { return DragonhealthEnemy; }
+    }
+    public int dragonScore
+    {
+        get { return DragonscoreEnemy; }
+    }
+    /*    public List<Wave> Waves
+        {
+            get { return waves; }
+        }*/
     public float TimeBetweenWaves
     {
         get { return timeBetweenWaves; }
@@ -417,6 +433,10 @@ public class ConfigurationData
             DamageMagicianLv3 = int.Parse(values[51]);
             DefaultScore = int.Parse(values[52]);
             FullHealthHouse = int.Parse(values[53]);
+
+            DragonmoveSpeed = float.Parse(values[54]);
+            DragonhealthEnemy = int.Parse(values[55]);
+            DragonscoreEnemy = int.Parse(values[56]);
         } catch (Exception ex) {
             Debug.Log(ex.Message);
         }

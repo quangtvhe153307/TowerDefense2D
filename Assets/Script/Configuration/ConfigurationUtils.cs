@@ -8,6 +8,18 @@ public static class ConfigurationUtils
     static ConfigurationData configurationData;
 
     //get data
+    public static float DragonSpeed
+    {
+        get { return configurationData.dragonSpeed; }
+    }
+    public static int DragonHealth
+    {
+        get { return configurationData.dragonHealth; }
+    }
+    public static int DragonScore
+    {
+        get { return configurationData.dragonScore; }
+    }
     public static float BoSpeed
     {
         get { return configurationData.boSpeed; }
