@@ -11,7 +11,7 @@ public class GameProgress : IntEventInvoker
     void Start()
     {
         text = gameObject.GetComponent<TextMeshProUGUI>();
-        text.text = "1/2";
+        text.text = "Current Wave : " + 1 + "/" + 2;
 
         EventManager.AddListener(EventName.NewWaveStartedEvent, SetText);
     }
